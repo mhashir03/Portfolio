@@ -1,100 +1,289 @@
-import Image from "next/image";
+import React from 'react';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="terminal-container">
+      {/* Header Section */}
+      <section className="terminal-section bento-item-featured">
+        <div className="terminal-header">
+          <span className="terminal-prompt">~</span>
+          <span className="ml-2 text-[#e6edf3]">whoami</span>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <div className="terminal-content terminal-content-fill">
+          <div className="flex flex-col md:flex-row gap-6 h-full">
+            <div className="flex-1">
+              <p>
+                <span className="terminal-prompt">$</span>
+                <span className="terminal-command"> echo $GREETING</span>
+              </p>
+              <div className="terminal-output">
+                Hey there! I'm <span className="text-[#58a6ff] font-bold">Hashir</span>, a Computer Science student with a passion for building cool stuff.
+              </div>
+              
+              <p className="mt-4">
+                <span className="terminal-prompt">$</span>
+                <span className="terminal-command"> cat contact.txt</span>
+              </p>
+              <div className="terminal-output">
+                <div>Email: mhashir0318@gmail.com</div>
+                <div>
+                  LinkedIn: <a href="https://linkedin.com/in/muhammad-hashir03" target="_blank" rel="noopener noreferrer" className="terminal-link">linkedin.com/in/muhammad-hashir03</a>
+                </div>
+                <div>
+                  GitHub: <a href="https://github.com/mhashir03" target="_blank" rel="noopener noreferrer" className="terminal-link">github.com/mhashir03</a>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex-1 flex items-center justify-center md:justify-end">
+              <div className="ascii-art text-center md:text-right">
+{`
+ ██╗  ██╗ █████╗ ███████╗██╗  ██╗██╗██████╗ 
+ ██║  ██║██╔══██╗██╔════╝██║  ██║██║██╔══██╗
+ ███████║███████║███████╗███████║██║██████╔╝
+ ██╔══██║██╔══██║╚════██║██╔══██║██║██╔══██╗
+ ██║  ██║██║  ██║███████║██║  ██║██║██║  ██║
+ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝
+                                            
+> Developer | Student | Creator <
+`}
+                <span className="cursor-blink"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bento Grid Layout */}
+      <div className="bento-grid">
+        {/* Education Section */}
+        <div className="bento-item">
+          <div className="terminal-header">
+            <span className="terminal-prompt">~</span>
+            <span className="ml-2 text-[#e6edf3]">Education</span>
+          </div>
+          <div className="terminal-content terminal-content-fill">
+            <p>
+              <span className="terminal-prompt">$</span>
+              <span className="terminal-command"> cat education.json</span>
+            </p>
+            <div className="terminal-output">
+              <pre className="whitespace-pre-wrap">
+{`{
+  "university": "Saint Louis University",
+  "location": "St. Louis, MO",
+  "degree": "Computer Science",
+  "graduation": "December 2025",
+  "courses": [
+    "Data Structures",
+    "Software Design",
+    "Operating Systems",
+    "Object Oriented Programming"
+  ]
+}`}
+              </pre>
+            </div>
+          </div>
+        </div>
+
+        {/* Experience Section */}
+        <div className="bento-item bento-item-tall">
+          <div className="terminal-header">
+            <span className="terminal-prompt">~</span>
+            <span className="ml-2 text-[#e6edf3]">Experience</span>
+          </div>
+          <div className="terminal-content terminal-content-fill">
+            <p>
+              <span className="terminal-prompt">$</span>
+              <span className="terminal-command"> ls -la ./experience/</span>
+            </p>
+            <div className="terminal-output">
+              <div className="mb-4">
+                <span className="text-[#58a6ff]">Aug 2024-Present</span>
+                <div className="text-[#e6edf3] font-bold">Open Source Developer @ SLU</div>
+                <p className="text-[#8b949e]">DADS: A Database of Arithmetical Dynamic Systems</p>
+                <ul className="list-disc ml-6 text-[#8b949e] mt-2">
+                  <li>Redesigned frontend architecture with React.js</li>
+                  <li>Improved query performance with PostgreSQL optimizations</li>
+                  <li>Collaborated with students to expand system functionality</li>
+                </ul>
+                <div className="flex flex-wrap mt-3">
+                  <span className="skill-tag">React.js</span>
+                  <span className="skill-tag">PostgreSQL</span>
+                  <span className="skill-tag">Docker</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* About Me Section */}
+        <div className="bento-item">
+          <div className="terminal-header">
+            <span className="terminal-prompt">~</span>
+            <span className="ml-2 text-[#e6edf3]">About</span>
+          </div>
+          <div className="terminal-content terminal-content-fill">
+            <p>
+              <span className="terminal-prompt">$</span>
+              <span className="terminal-command"> cat about-me.txt</span>
+            </p>
+            
+            <div className="terminal-output">
+              <p className="mb-2">I'm a problem solver at heart who loves building things that make a difference. My journey in tech started with a simple "Hello World" and has evolved into a passion for creating elegant solutions to complex problems.</p>
+              <p>When I'm not coding, I enjoy:</p>
+              <ul className="list-disc ml-6">
+                <li>Playing tennis</li>
+                <li>Watching 90s movies</li>
+                <li>Exploring new coffee shops</li>
+                <li>Reading philosophy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Skills Section */}
+        <div className="bento-item">
+          <div className="terminal-header">
+            <span className="terminal-prompt">~</span>
+            <span className="ml-2 text-[#e6edf3]">Skills</span>
+          </div>
+          <div className="terminal-content terminal-content-fill">
+            <p>
+              <span className="terminal-prompt">$</span>
+              <span className="terminal-command"> ls -la ./skills/</span>
+            </p>
+            
+            <div className="terminal-output">
+              <div className="mb-2">
+                <div className="text-[#e6edf3] font-bold mb-1">Languages:</div>
+                <div className="flex flex-wrap">
+                  <span className="skill-tag">Python</span>
+                  <span className="skill-tag">Java</span>
+                  <span className="skill-tag">C/C++</span>
+                  <span className="skill-tag">TypeScript</span>
+                  <span className="skill-tag">JavaScript</span>
+                </div>
+              </div>
+              
+              <div>
+                <div className="text-[#e6edf3] font-bold mb-1">Tools & Frameworks:</div>
+                <div className="flex flex-wrap">
+                  <span className="skill-tag">React.js</span>
+                  <span className="skill-tag">Next.js</span>
+                  <span className="skill-tag">Tailwind CSS</span>
+                  <span className="skill-tag">PostgreSQL</span>
+                  <span className="skill-tag">Docker</span>
+                  <span className="skill-tag">Git</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Leadership Section */}
+        <div className="bento-item">
+          <div className="terminal-header">
+            <span className="terminal-prompt">~</span>
+            <span className="ml-2 text-[#e6edf3]">Leadership</span>
+          </div>
+          <div className="terminal-content terminal-content-fill">
+            <p>
+              <span className="terminal-prompt">$</span>
+              <span className="terminal-command"> cat leadership.txt</span>
+            </p>
+            
+            <div className="terminal-output">
+              <div className="mb-1">
+                <span className="text-[#e6edf3] font-bold">STLCC MUSLIM STUDENT ASSOCIATION</span>
+              </div>
+              <div className="text-[#8b949e] mb-1">Founder & President | 2022-2023</div>
+              <p className="text-[#8b949e]">Built a community from scratch, organized events with 50+ attendees, and managed a $2,000+ budget</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Projects Section - Large Item */}
+        <div className="bento-item bento-item-large">
+          <div className="terminal-header">
+            <span className="terminal-prompt">~</span>
+            <span className="ml-2 text-[#e6edf3]">Projects</span>
+          </div>
+          <div className="terminal-content terminal-content-fill">
+            <p>
+              <span className="terminal-prompt">$</span>
+              <span className="terminal-command"> find ./projects -type f -name "*.md" | xargs cat</span>
+            </p>
+            
+            <div className="terminal-output">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="project-card">
+                  <h3 className="project-title">Trackr</h3>
+                  <p className="text-[#8b949e]">AI-powered travel companion app that helps you plan and manage your trips</p>
+                  <div className="flex flex-wrap mt-2">
+                    <span className="skill-tag">TypeScript</span>
+                    <span className="skill-tag">React</span>
+                    <span className="skill-tag">LangChain</span>
+                  </div>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="terminal-link text-sm block mt-2">View on GitHub →</a>
+                </div>
+                
+                <div className="project-card">
+                  <h3 className="project-title">Scrapefy</h3>
+                  <p className="text-[#8b949e]">AI-powered web scraper that extracts and analyzes content from websites</p>
+                  <div className="flex flex-wrap mt-2">
+                    <span className="skill-tag">Python</span>
+                    <span className="skill-tag">Selenium</span>
+                    <span className="skill-tag">Ollama</span>
+                  </div>
+                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="terminal-link text-sm block mt-2">View on GitHub →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Current Status - Fun Element */}
+        <div className="bento-item">
+          <div className="terminal-header">
+            <span className="terminal-prompt">~</span>
+            <span className="ml-2 text-[#e6edf3]">Status</span>
+          </div>
+          <div className="terminal-content terminal-content-fill">
+            <p>
+              <span className="terminal-prompt">$</span>
+              <span className="terminal-command"> uptime</span>
+            </p>
+            
+            <div className="terminal-output">
+              <p className="mb-2">
+                <span className="text-[#3fb950]">●</span> Currently: <span className="text-[#e6edf3]">Available for opportunities</span>
+              </p>
+              <p className="mb-2">
+                <span className="text-[#3fb950]">●</span> Learning: <span className="text-[#e6edf3]">Advanced React patterns & AI integration</span>
+              </p>
+              <p>
+                <span className="text-[#3fb950]">●</span> Working on: <span className="text-[#e6edf3]">Building a personal coding blog</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="text-center text-[#8b949e] py-6 mt-6">
+        <div className="flex justify-center space-x-6 mb-4">
+          <a href="mailto:mhashir0318@gmail.com" className="terminal-link">Email</a>
+          <a href="https://linkedin.com/in/muhammad-hashir03" target="_blank" rel="noopener noreferrer" className="terminal-link">LinkedIn</a>
+          <a href="https://github.com/mhashir03" target="_blank" rel="noopener noreferrer" className="terminal-link">GitHub</a>
+        </div>
+        <p>© {new Date().getFullYear()} Hashir. All rights reserved.</p>
+        <p className="text-xs mt-1">
+          <span className="terminal-prompt">$</span> Made with 
+          <span className="text-[#f85149]"> ♥</span> and lots of 
+          <span className="text-[#3fb950]"> code</span>
+        </p>
       </footer>
     </div>
   );
