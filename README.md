@@ -1,6 +1,12 @@
-# Terminal-Themed Portfolio
+# Muhammad Hashir's Terminal-Themed Portfolio
 
-A modern, responsive portfolio website with a terminal/code-inspired aesthetic built using Next.js and Tailwind CSS.
+This is my personal portfolio website with a terminal/code-inspired aesthetic built using Next.js and Tailwind CSS. Feel free to use this code as inspiration for your own projects, but please don't create a direct copy.
+
+[View Live Demo](https://www.hashir.fyi)
+
+## 🖥️ About This Project
+
+I created this portfolio to showcase my skills and projects in a unique way that reflects my passion for coding. The terminal theme represents my comfort with command-line interfaces and technical environments.
 
 ## ✨ Features
 
@@ -8,8 +14,7 @@ A modern, responsive portfolio website with a terminal/code-inspired aesthetic b
 - **Responsive Design**: Looks great on all devices (mobile, tablet, desktop)
 - **Dark Theme**: Easy on the eyes with a dark code editor-like color scheme
 - **Fast Performance**: Built with Next.js for optimal loading speed
-- **Easy to Customize**: Simple structure to update with your own information
-- **SEO Friendly**: Built-in metadata optimization for better search engine visibility
+- **Interactive Elements**: Terminal-like interactions and animations
 
 ## 🛠️ Technologies Used
 
@@ -18,7 +23,9 @@ A modern, responsive portfolio website with a terminal/code-inspired aesthetic b
 - [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript
 - [React](https://reactjs.org/) - JavaScript library for building user interfaces
 
-## 🚀 Getting Started
+## 🚀 For Developers
+
+If you'd like to use this project as inspiration, here's how to set up a similar environment:
 
 ### Prerequisites
 
@@ -27,9 +34,9 @@ A modern, responsive portfolio website with a terminal/code-inspired aesthetic b
 
 ### Installation
 
-1. Clone the repository:
+1. Clone the repository (or create your own based on this design):
    ```bash
-   git clone https://github.com/mhashir03/portfolio.git
+   git clone https://github.com/yourusername/portfolio.git
    cd portfolio
    ```
 
@@ -49,97 +56,27 @@ A modern, responsive portfolio website with a terminal/code-inspired aesthetic b
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-## 📝 Customization
+## 📝 Customization Ideas
 
-### Personal Information
+If you're using this as inspiration, here are some ways to make it your own:
 
-Edit the `src/app/page.tsx` file to update:
-- Your name and introduction
-- Contact information
-- Education details
-- Work experience
-- Projects
-- Skills
-- Leadership experience
-
-### Styling
-
-- Global styles are in `src/app/globals.css`
-- Terminal theme colors can be adjusted in `tailwind.config.ts`
+- Change the color scheme to match your personal brand
+- Add your own projects and experiences
+- Create custom terminal commands and responses
+- Add interactive elements like typing animations
+- Incorporate your own ASCII art or logos
 
 ## 📤 Deployment
 
-### Deploying to Vercel (Recommended)
+The site is deployed on Vercel. If you create your own version, you can deploy it using:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com) from the creators of Next.js.
-
-1. Create an account on Vercel if you don't have one
-2. Install the Vercel CLI:
-   ```bash
-   npm install -g vercel
-   ```
-3. Run the following command in your project directory:
-   ```bash
-   vercel
-   ```
-4. Follow the prompts to deploy your application
-
-### Other Deployment Options
-
-#### Netlify
-
-1. Create a `netlify.toml` file in the root of your project:
-   ```toml
-   [build]
-     command = "npm run build"
-     publish = ".next"
-   ```
-2. Push your code to GitHub
-3. Import your repository on Netlify
-4. Configure the build settings and deploy
-
-#### GitHub Pages
-
-For GitHub Pages, you'll need to export your Next.js app as static HTML:
-
-1. Update your `next.config.js` to include:
-   ```js
-   module.exports = {
-     output: 'export',
-   }
-   ```
-2. Build and export your app:
-   ```bash
-   npm run build
-   ```
-3. The static files will be in the `out` directory, which you can deploy to GitHub Pages
-
-#### Custom Domain
-
-To use a custom domain:
-
-1. Purchase a domain from a domain registrar (Namecheap, GoDaddy, Google Domains, etc.)
-2. Configure DNS settings to point to your hosting provider
-3. Set up the custom domain in your hosting provider's dashboard
-4. Add SSL certificate for HTTPS (most providers offer this for free)
-
-## 🧪 Testing
-
-```bash
-npm run test
-# or
-yarn test
-```
+- [Vercel](https://vercel.com) (recommended for Next.js projects)
+- [Netlify](https://netlify.com)
+- [GitHub Pages](https://pages.github.com) (requires static export)
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgements
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Vercel Platform](https://vercel.com)
+This project is my personal portfolio. While the code is publicly available for inspiration, please don't create direct copies. Create something unique that represents your own skills and personality!
 
 ---
 
