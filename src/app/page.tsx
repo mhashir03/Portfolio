@@ -18,7 +18,7 @@ export default function Home() {
                 <span className="terminal-command"> echo $GREETING</span>
               </p>
               <div className="terminal-output">
-                Hey there! I'm <span className="text-[#58a6ff] font-bold">Hashir</span>, a Computer Science student with a passion for building cool stuff.
+                Hey there! I'm <span className="text-[#58a6ff] font-bold">Hashir</span>, a Computer Science student who loves finding simple solutions to everyday problems.
               </div>
               
               <p className="mt-4">
@@ -219,14 +219,15 @@ export default function Home() {
             <div className="terminal-output">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="project-card">
-                  <h3 className="project-title">Trackr</h3>
-                  <p className="text-[#8b949e]">AI-powered travel companion app that helps you plan and manage your trips</p>
+                  <h3 className="project-title">Personal Website</h3>
+                  <p className="text-[#8b949e]">This website is a portfolio of my projects and skills</p>
                   <div className="flex flex-wrap mt-2">
                     <span className="skill-tag">TypeScript</span>
                     <span className="skill-tag">React</span>
-                    <span className="skill-tag">LangChain</span>
+                    <span className="skill-tag">Next.js</span>
+                    <span className="skill-tag">Tailwind CSS</span>
                   </div>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="terminal-link text-sm block mt-2">View on GitHub →</a>
+                  <a href="https://github.com/mhashir03/portfolio" target="_blank" rel="noopener noreferrer" className="terminal-link text-sm block mt-2">View on GitHub →</a>
                 </div>
                 
                 <div className="project-card">
@@ -237,7 +238,7 @@ export default function Home() {
                     <span className="skill-tag">Selenium</span>
                     <span className="skill-tag">Ollama</span>
                   </div>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="terminal-link text-sm block mt-2">View on GitHub →</a>
+                  <a href="https://github.com/mhashir03/Scrapefy" target="_blank" rel="noopener noreferrer" className="terminal-link text-sm block mt-2">View on GitHub →</a>
                 </div>
               </div>
             </div>
@@ -258,13 +259,13 @@ export default function Home() {
             
             <div className="terminal-output">
               <p className="mb-2">
-                <span className="text-[#3fb950]">●</span> Currently: <span className="text-[#e6edf3]">Available for opportunities</span>
+                <span className="text-[#3fb950]">●</span> Currently: <span className="text-[#e6edf3]">Looking for Summer 2025 Internships</span>
               </p>
               <p className="mb-2">
-                <span className="text-[#3fb950]">●</span> Learning: <span className="text-[#e6edf3]">Advanced React patterns & AI integration</span>
+                <span className="text-[#3fb950]">●</span> Learning: <span className="text-[#e6edf3]">Java for game development and AI integration</span>
               </p>
               <p>
-                <span className="text-[#3fb950]">●</span> Working on: <span className="text-[#e6edf3]">Building a personal coding blog</span>
+                <span className="text-[#3fb950]">●</span> Working on: <span className="text-[#e6edf3]">Building a SaaS product that helps students fix their sleep</span>
               </p>
             </div>
           </div>
