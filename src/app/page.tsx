@@ -33,6 +33,25 @@ export default function Home() {
                 <div>
                   GitHub: <a href="https://github.com/mhashir03" target="_blank" rel="noopener noreferrer" className="terminal-link">github.com/mhashir03</a>
                 </div>
+                <div className="mt-4">
+                  <p className="mb-1">
+                    <span className="terminal-prompt">$</span>
+                    <span className="terminal-command"> less resume.pdf</span>
+                  </p>
+                  <div className="flex">
+                    <a 
+                      href="/resume.pdf" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-3 py-1.5 bg-[#0d1117] text-[#e6edf3] rounded border border-[#30363d] hover:bg-[#161b22] hover:border-[#58a6ff] transition-colors"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                      </svg>
+                      <span className="font-mono text-sm">view_resume.pdf</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             
