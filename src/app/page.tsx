@@ -310,7 +310,7 @@ export default function Home() {
                   <ul className="list-disc ml-6 text-[#8b949e] mt-1">
                     <li>Built a community from scratch, organizing regular events with 25+ attendees</li>
                     <li>Managed a $2,000+ annual budget for events and activities</li>
-                    <li>Collaborated with other 3 other campuses for cross-campus events</li>
+                    <li>Collaborated with 3 other campuses for cross-campus events</li>
                     <li>Increased membership through targeted outreach campaigns via Instagram, flyers, and word of mouth</li>
                   </ul>
                 </div>
