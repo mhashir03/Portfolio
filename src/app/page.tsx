@@ -40,7 +40,7 @@ export default function Home() {
                   </p>
                   <div className="flex">
                     <a 
-                      href="/resume.pdf" 
+                      href="/Muhammad_Hashir_Resume.pdf" 
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center px-3 py-1.5 bg-[#0d1117] text-[#e6edf3] rounded border border-[#30363d] hover:bg-[#161b22] hover:border-[#58a6ff] transition-colors"
@@ -120,17 +120,17 @@ export default function Home() {
             <div className="terminal-output">
               <div className="mb-4">
                 <span className="text-[#58a6ff]">Aug 2024-Present</span>
-                <div className="text-[#e6edf3] font-bold">Open Source Developer @ SLU</div>
-                <p className="text-[#8b949e]">DADS: A Database of Arithmetical Dynamic Systems</p>
+                <div className="text-[#e6edf3] font-bold">Software Engineer</div>
+                <p className="text-[#8b949e]">Open Source @ SLU</p>
                 <ul className="list-disc ml-6 text-[#8b949e] mt-2">
                   <li>Redesigned frontend architecture with React.js</li>
                   <li>Improved query performance with PostgreSQL optimizations</li>
                   <li>Collaborated with students to expand system functionality</li>
                 </ul>
                 <div className="flex flex-wrap mt-3">
+                  <span className="skill-tag">Python</span>
                   <span className="skill-tag">React.js</span>
                   <span className="skill-tag">PostgreSQL</span>
-                  <span className="skill-tag">Docker</span>
                 </div>
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function Home() {
                     <span className="skill-tag">Next.js</span>
                     <span className="skill-tag">Tailwind CSS</span>
                   </div>
-                  <a href="https://github.com/mhashir03/portfolio" target="_blank" rel="noopener noreferrer" className="terminal-link text-sm block mt-2">View on GitHub →</a>
+                  <a href="https://github.com/mhashir03/Portfolio" target="_blank" rel="noopener noreferrer" className="terminal-link text-sm block mt-2">View on GitHub →</a>
                 </div>
                 
                 <div className="project-card">
@@ -281,10 +281,10 @@ export default function Home() {
                 <span className="text-[#3fb950]">●</span> Currently: <span className="text-[#e6edf3]">Looking for Summer 2025 Internships</span>
               </p>
               <p className="mb-2">
-                <span className="text-[#3fb950]">●</span> Learning: <span className="text-[#e6edf3]">Java for game development and AI integration</span>
+                <span className="text-[#3fb950]">●</span> Learning: <span className="text-[#e6edf3]">Java for Object Oriented Software Design and C for Operating Systems</span>
               </p>
               <p>
-                <span className="text-[#3fb950]">●</span> Working on: <span className="text-[#e6edf3]">Building a SaaS product that helps students fix their sleep</span>
+                <span className="text-[#3fb950]">●</span> Working on: <span className="text-[#e6edf3]">Building more meaningful projects and learning more about AI</span>
               </p>
             </div>
           </div>
