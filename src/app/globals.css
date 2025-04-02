@@ -292,3 +292,225 @@ h1, h2, h3, h4, h5, h6 {
     --foreground: var(--color-terminal-text);
   }
 }
+
+/* Terminal typing effect styles */
+.typing-text {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 1s steps(20, end);
+  width: fit-content;
+  display: inline-block;
+}
+
+.typing-text-delay-1 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 1s steps(20, end);
+  animation-delay: 1s;
+  width: 0;
+  animation-fill-mode: forwards;
+}
+
+.typing-text-delay-2 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 1.5s steps(30, end);
+  animation-delay: 2.5s;
+  width: 0;
+  animation-fill-mode: forwards;
+}
+
+.typing-text-delay-3 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(60, end);
+  animation-delay: 4s;
+  width: 0;
+  animation-fill-mode: forwards;
+}
+
+.typing-text-delay-4 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 1.5s steps(30, end);
+  animation-delay: 6.5s;
+  width: 0;
+  animation-fill-mode: forwards;
+}
+
+.typing-text-delay-5 {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2.5s steps(60, end);
+  animation-delay: 8s;
+  width: 0;
+  animation-fill-mode: forwards;
+}
+
+.typing-text-delay-6 {
+  opacity: 0;
+  animation: fadeIn 0.5s;
+  animation-delay: 10.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+.cursor-typing-blink {
+  display: inline-block;
+  width: 0.6em;
+  height: 1em;
+  background-color: var(--color-terminal-success);
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+  margin-left: 0.2em;
+}
+
+.typing-effect-container {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+.typing-line {
+  color: var(--color-terminal-text);
+}
+
+.typing-output {
+  color: var(--color-terminal-muted);
+  margin-left: 1rem;
+}
+
+/* Matrix animation styles */
+.matrix-container {
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+
+.matrix-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #3fb950;
+  font-family: monospace;
+  font-size: 14px;
+  text-shadow: 0 0 5px rgba(63, 185, 80, 0.8);
+}
+
+.matrix-column {
+  position: absolute;
+  top: -20px;
+  width: 30px;
+  text-align: center;
+  animation: matrix-rain 3s linear infinite;
+}
+
+.matrix-column span {
+  display: block;
+  animation: matrix-flicker 0.5s linear infinite;
+}
+
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes matrix-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Optional: Add a glow effect to the central text */
+.mix-blend-difference {
+  text-shadow: 0 0 10px rgba(63, 185, 80, 0.8), 0 0 20px rgba(63, 185, 80, 0.5);
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Quote animation styles */
+.typing-quote {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.typing-quote span {
+  display: inline-block;
+  white-space: pre-wrap;
+  position: relative;
+}
+
+.typing-quote span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--background);
+  border-left: 0.15em solid var(--color-terminal-success);
+  animation: typing 4s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+.quote-author-animate {
+  animation: fadeInAuthor 1s ease forwards;
+  animation-delay: 4s;
+}
+
+@keyframes typing {
+  from { left: 0 }
+  to { left: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--color-terminal-success) }
+}
+
+@keyframes fadeInAuthor {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+/* This will be used for quote cycling with JavaScript */
+.quote-container[data-state="transition-out"] .typing-quote span::before {
+  animation: none;
+}
+
+.quote-container[data-state="transition-out"] .typing-quote {
+  animation: fadeOutQuote 1s ease forwards;
+}
+
+.quote-container[data-state="transition-out"] .quote-author {
+  animation: fadeOutAuthor 1s ease forwards;
+}
+
+@keyframes fadeOutQuote {
+  from { opacity: 1 }
+  to { opacity: 0 }
+}
+
+@keyframes fadeOutAuthor {
+  from { opacity: 1 }
+  to { opacity: 0 }
+}

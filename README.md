@@ -20,6 +20,7 @@ I created this portfolio to showcase my skills and projects in a unique way that
 
 - [Next.js](https://nextjs.org/) - React framework for production
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - JavaScript
 - [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript
 - [React](https://reactjs.org/) - JavaScript library for building user interfaces
 

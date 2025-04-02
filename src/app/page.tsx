@@ -1,7 +1,17 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect } from 'react';
 import Link from 'next/link';
+import { quotes } from './quotes';
 
 export default function Home() {
+  useEffect(() => {
+    // Import cycleQuotes function dynamically
+    import('./quotes').then(module => {
+      module.cycleQuotes();
+    });
+  }, []);
+
   return (
     <div className="terminal-container">
       {/* Header Section */}
@@ -224,29 +234,30 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Status Section */}
+        {/* Matrix Digital Rain Section */}
         <div className="bento-item">
           <div className="terminal-header">
             <span className="terminal-prompt">~</span>
-            <span className="ml-2 text-[#e6edf3]">Status</span>
+            <span className="ml-2 text-[#e6edf3]">Quotes</span>
           </div>
           <div className="terminal-content">
-            <p>
+            <p className="mb-2">
               <span className="terminal-prompt">$</span>
-              <span className="terminal-command"> uptime</span>
+              <span className="terminal-command"> ./wisdom.sh</span>
             </p>
             
             <div className="terminal-output">
-              <div className="space-y-2">
-                <p>
-                  <span className="text-[#3fb950]">●</span> Currently: <span className="text-[#e6edf3]">Looking for Summer 2025 Internships</span>
-                </p>
-                <p>
-                  <span className="text-[#3fb950]">●</span> Learning: <span className="text-[#e6edf3]">Java for Object Oriented Software Design and C for Operating Systems</span>
-                </p>
-                <p>
-                  <span className="text-[#3fb950]">●</span> Working on: <span className="text-[#e6edf3]">Building more meaningful projects and learning more about AI</span>
-                </p>
+              <div className="quote-container h-48 flex flex-col justify-center">
+                <div className="typing-quote mb-2 overflow-hidden whitespace-pre-wrap" style={{ minHeight: '6rem' }}>
+                  <span className="text-[#e6edf3]">"Software is a great combination between artistry and engineering."</span>
+                </div>
+                <div className="quote-author text-right text-[#58a6ff] opacity-0 quote-author-animate">
+                  — Bill Gates (Co-founder of Microsoft)
+                </div>
+                <div className="cursor-line mt-4 typing-text-delay-6 hidden">
+                  <span className="terminal-prompt">$</span>
+                  <span className="cursor-typing-blink"></span>
+                </div>
               </div>
             </div>
           </div>
@@ -334,7 +345,19 @@ export default function Home() {
             <div className="terminal-output">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="project-card">
-                  <h3 className="project-title">Ozzy</h3>
+                  <div className="flex flex-col mb-2">
+                    <h3 className="project-title mb-1">Ozzy</h3>
+                    <div className="inline-flex items-center">
+                      <div className="relative">
+                        <div className="bg-gradient-to-r from-[#f0883e] to-[#f5af19] text-[#0d1117] text-xs font-bold py-1 px-3 rounded-md flex items-center animate-pulse">
+                          <span className="mr-1">🏆</span>
+                          <span className="font-mono tracking-wider">WINNER</span>
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#f0883e] to-[#f5af19] rounded-md blur-sm opacity-40 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                      </div>
+                      <span className="text-[#58a6ff] ml-2 text-sm">HackSLU 2025</span>
+                    </div>
+                  </div>
                   <p className="text-[#8b949e]">Mobile app designed to help users with speech difficulties communicate more effectively</p>
                   <div className="flex flex-wrap mt-2">
                     <span className="skill-tag">React Native</span>
@@ -342,7 +365,10 @@ export default function Home() {
                     <span className="skill-tag">JavaScript</span>
                     <span className="skill-tag">Expo</span>
                   </div>
-                  <a href="https://github.com/mhashir03/Ozzy" target="_blank" rel="noopener noreferrer" className="terminal-link block mt-2">View on GitHub →</a>
+                  <div className="flex space-x-4 mt-2">
+                    <a href="https://github.com/mhashir03/Ozzy" target="_blank" rel="noopener noreferrer" className="terminal-link">View on GitHub →</a>
+                    <a href="https://devpost.com/software/ozzy" target="_blank" rel="noopener noreferrer" className="terminal-link">Devpost →</a>
+                  </div>
                 </div>
 
                 <div className="project-card">
@@ -362,11 +388,12 @@ export default function Home() {
 
                 <div className="project-card">
                   <h3 className="project-title">Personal Website</h3>
-                  <p className="text-[#8b949e]">This website is a portfolio of my projects and skills</p>
+                  <p className="text-[#8b949e]">This website is a portfolio that highlights my experience, projects, and skills</p>
                   <div className="flex flex-wrap mt-2">
-                    <span className="skill-tag">TypeScript</span>
-                    <span className="skill-tag">React.js</span>
                     <span className="skill-tag">Next.js</span>
+                    <span className="skill-tag">TypeScript</span>
+                    <span className="skill-tag">JavaScript</span>
+                    <span className="skill-tag">React.js</span>
                     <span className="skill-tag">Tailwind CSS</span>
                   </div>
                   <a href="https://github.com/mhashir03/Portfolio" target="_blank" rel="noopener noreferrer" className="terminal-link block mt-2">View on GitHub →</a>
@@ -383,6 +410,7 @@ export default function Home() {
                   </div>
                   <a href="https://github.com/mhashir03/Scrapefy" target="_blank" rel="noopener noreferrer" className="terminal-link block mt-2">View on GitHub →</a>
                 </div>
+                
               </div>
             </div>
           </div>
