@@ -407,6 +407,7 @@ export default function Home() {
                     <span className="skill-tag">Langchain</span>
                     <span className="skill-tag">Selenium</span>
                     <span className="skill-tag">Streamlit</span>
+                    <span className="skill-tag">BeautifulSoup</span>
                   </div>
                   <a href="https://github.com/mhashir03/Scrapefy" target="_blank" rel="noopener noreferrer" className="terminal-link block mt-2">View on GitHub →</a>
                 </div>
