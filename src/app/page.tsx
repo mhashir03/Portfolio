@@ -344,6 +344,7 @@ export default function Home() {
             
             <div className="terminal-output">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
                 <div className="project-card">
                   <div className="flex flex-col mb-2">
                     <h3 className="project-title mb-1">Ozzy</h3>
@@ -372,17 +373,28 @@ export default function Home() {
                 </div>
 
                 <div className="project-card">
-                  <h3 className="project-title">Ozzy Website</h3>
-                  <p className="text-[#8b949e]">This website serves as the official promotional landing page for the Ozzy app</p>
+                  <h3 className="project-title">Kira</h3>
+                  <div className="inline-flex items-center">
+                    <div className="relative">
+                      <div className="bg-gradient-to-r from-[#f0883e] to-[#f5af19] text-[#0d1117] text-xs font-bold py-1 px-3 rounded-md flex items-center animate-pulse">
+                        <span className="mr-1">🏆</span>
+                        <span className="font-mono tracking-wider">FEATURED</span>
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#f0883e] to-[#f5af19] rounded-md blur-sm opacity-40 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                    </div>
+                    <span className="text-[#58a6ff] ml-2 text-sm">Google DevFest WashU 2025</span>
+                  </div>
+                  <p className="text-[#8b949e]">Web app designed to help users understand their symptoms and assess potential health conditions</p>
                   <div className="flex flex-wrap mt-2">
                     <span className="skill-tag">Next.js</span>
                     <span className="skill-tag">TypeScript</span>
                     <span className="skill-tag">JavaScript</span>
                     <span className="skill-tag">Tailwind CSS</span>
+                    <span className="skill-tag">React.js</span>
                   </div>
                   <div className="flex space-x-4 mt-2">
-                    <a href="https://github.com/mhashir03/Ozzy-Website" target="_blank" rel="noopener noreferrer" className="terminal-link">View on GitHub →</a>
-                    <a href="https://www.useozzy.com/" target="_blank" rel="noopener noreferrer" className="terminal-link">Website →</a>
+                    <a href="https://github.com/mhashir03/Kira" target="_blank" rel="noopener noreferrer" className="terminal-link">View on GitHub →</a>
+                    <a href="https://www.usekiraapp.com/" target="_blank" rel="noopener noreferrer" className="terminal-link">Website →</a>
                   </div>
                 </div>
 
