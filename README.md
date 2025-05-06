@@ -1,4 +1,4 @@
-# Terminal Portfolio
+# Hashir's Personal Portfolio
 
 This is my personal portfolio website with a terminal/code-inspired aesthetic built using Next.js and Tailwind CSS. 
 
