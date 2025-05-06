@@ -21,6 +21,7 @@ https://www.hashir.fyi
 
 - Next.js 15 (React 19)
 - TypeScript
+- JavaScript
 - Tailwind CSS
 - Vercel Edge Functions
 - Spotify Web API
