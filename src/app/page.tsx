@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { quotes } from './quotes';
+import SpotifyNowPlaying from './components/Spotify';
 
 export default function Home() {
   useEffect(() => {
@@ -104,9 +105,9 @@ export default function Home() {
                   <div className="text-[#e6edf3] font-bold">Software Engineer</div>
                   <p className="text-[#8b949e]">Open Source @ SLU</p>
                   <ul className="list-disc ml-6 text-[#8b949e] mt-1">
-                    <li>Redesigned frontend architecture with React.js</li>
-                    <li>Improved query performance with PostgreSQL optimizations</li>
-                    <li>Collaborated with students to expand system functionality</li>
+                    <li>Contributed to DADS project across 8 sprints, delivering features on CI/CD and Agile workflows</li>
+                    <li>Spearheaded React.js front-end redesign for improved scalability and responsive UI/UX</li>
+                    <li>Optimized PostgreSQL queries with indexing, boosting retrieval efficiency by 5%</li>
                   </ul>
                   <div className="flex flex-wrap mt-2">
                     <span className="skill-tag">Python</span>
@@ -203,7 +204,6 @@ export default function Home() {
                     <span className="skill-tag">Next.js</span>
                     <span className="skill-tag">Expo</span>
                     <span className="skill-tag">Tailwind CSS</span>
-                    <span className="skill-tag">Selenium</span>
                     <span className="skill-tag">Langchain</span>
                   </div>
                 </div>
@@ -213,20 +213,29 @@ export default function Home() {
                   <div className="flex flex-wrap">
                     <span className="skill-tag">Streamlit</span>
                     <span className="skill-tag">Lucide</span>
+                    <span className="skill-tag">Beautiful Soup</span>
+                    <span className="skill-tag">Framer Motion</span>
+                    <span className="skill-tag">Radix</span>
+                    <span className="skill-tag">Shadcn</span>
                     <span className="skill-tag">OpenAI</span>
                     <span className="skill-tag">Ollama</span>
-                    <span className="skill-tag">BeautifulSoup</span>
-                    <span className="skill-tag">Framer Motion</span>
+                    <span className="skill-tag">Gemini</span>
                   </div>
                 </div>
                 
                 <div>
-                  <div className="text-[#e6edf3] font-bold mb-1">Tools:</div>
+                  <div className="text-[#e6edf3] font-bold mb-1">Developer Tools:</div>
                   <div className="flex flex-wrap">
                     <span className="skill-tag">Git</span>
+                    <span className="skill-tag">Gradle</span>
+                    <span className="skill-tag">JUnit</span>
+                    <span className="skill-tag">Selenium</span>
                     <span className="skill-tag">PostgreSQL</span>
                     <span className="skill-tag">LaTeX</span>
+                    <span className="skill-tag">Linux</span>
+                    <span className="skill-tag">GitHub Actions</span>
                     <span className="skill-tag">VS Code</span>
+                    <span className="skill-tag">Slack</span>
                   </div>
                 </div>
               </div>
@@ -284,6 +293,9 @@ export default function Home() {
                 <li>Exploring new coffee shops</li>
                 <li>Reading philosophy</li>
               </ul>
+              
+              {/* Spotify Now Playing Section */}
+              <SpotifyNowPlaying />
             </div>
           </div>
         </div>
@@ -373,18 +385,20 @@ export default function Home() {
                 </div>
 
                 <div className="project-card">
-                  <h3 className="project-title">Kira</h3>
-                  <div className="inline-flex items-center">
-                    <div className="relative">
-                      <div className="bg-gradient-to-r from-[#f0883e] to-[#f5af19] text-[#0d1117] text-xs font-bold py-1 px-3 rounded-md flex items-center animate-pulse">
-                        <span className="mr-1">🏆</span>
-                        <span className="font-mono tracking-wider">FEATURED</span>
+                  <div className="flex flex-col mb-2">
+                    <h3 className="project-title mb-1">Kira</h3>
+                    <div className="inline-flex items-center">
+                      <div className="relative">
+                        <div className="bg-gradient-to-r from-[#f0883e] to-[#f5af19] text-[#0d1117] text-xs font-bold py-1 px-3 rounded-md flex items-center animate-pulse">
+                          <span className="mr-1">🏆</span>
+                          <span className="font-mono tracking-wider">FEATURED</span>
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#f0883e] to-[#f5af19] rounded-md blur-sm opacity-40 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
                       </div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#f0883e] to-[#f5af19] rounded-md blur-sm opacity-40 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                      <span className="text-[#58a6ff] ml-2 text-sm">Google DevFest 2025</span>
                     </div>
-                    <span className="text-[#58a6ff] ml-2 text-sm">Google DevFest WashU 2025</span>
                   </div>
-                  <p className="text-[#8b949e]">Web app designed to help users understand their symptoms and assess potential health conditions</p>
+                  <p className="text-[#8b949e]">Web app designed to help users understand their symptoms and assess potential health</p>
                   <div className="flex flex-wrap mt-2">
                     <span className="skill-tag">Next.js</span>
                     <span className="skill-tag">TypeScript</span>
@@ -399,6 +413,7 @@ export default function Home() {
                 </div>
 
                 <div className="project-card">
+                  <div className="flex flex-col mb-2">
                   <h3 className="project-title">Personal Website</h3>
                   <p className="text-[#8b949e]">This website is a portfolio that highlights my experience, projects, and skills</p>
                   <div className="flex flex-wrap mt-2">
@@ -409,6 +424,7 @@ export default function Home() {
                     <span className="skill-tag">Tailwind CSS</span>
                   </div>
                   <a href="https://github.com/mhashir03/Portfolio" target="_blank" rel="noopener noreferrer" className="terminal-link block mt-2">View on GitHub →</a>
+                </div>
                 </div>
                 
                 <div className="project-card">
