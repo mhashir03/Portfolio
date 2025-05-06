@@ -16,7 +16,7 @@ const Header = () => {
               <span className="terminal-command"> echo $GREETING</span>
             </p>
             <div className="terminal-output">
-              Hey there! I'm <span className="text-[#58a6ff] font-bold">Hashir</span>, a Computer Science student who loves finding simple solutions to everyday problems.
+              Hey there! I'm <span className="text-[#58a6ff] font-bold">Hashir</span>, studying CS @ Saint Louis University.
             </div>
             
             <p className="mt-3">
