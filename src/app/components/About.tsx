@@ -22,7 +22,7 @@ const About = () => {
             </p>
             
             <div className="terminal-output">
-              <p className="mb-1 text-sm">Problem solver who loves building impactful tech. When not coding: tennis, 90s movies, coffee shops & philosophy books.</p>
+              <p className="mb-1 text-sm">Code. Tennis. Films. Chess. Books. Not necessarily in that order. 3AM coding sessions fueled by house music. Currently on a mission to perfect my tennis serve and get to a 4.0 DUPR in pickleball. Let's talk about that ending in Shutter Island...</p>
               
               <div className="flex flex-wrap gap-2 mt-2">
                 <span className="px-2 py-1 text-xs bg-[#1f2937] rounded-full text-[#8b949e]">Tennis</span>
