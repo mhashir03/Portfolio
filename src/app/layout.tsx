@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Muhammad Hashir",
   description: "Software Engineer / Student / Creator",
   icons: {
-    icon: '/favicon.ico',
+    icon: './favicon.ico',
   },
 };
 
