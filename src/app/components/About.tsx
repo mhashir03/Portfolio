@@ -25,8 +25,6 @@ const About = () => {
               <p className="mb-1 text-sm">Code. Tennis. Films. Chess. Books. Not necessarily in that order. 3AM coding sessions fueled by house music. Currently on a mission to perfect my tennis serve and get to a 4.0 DUPR in pickleball. Let's talk about that ending in Shutter Island...</p>
               
               <div className="flex flex-wrap gap-2 mt-2">
-                <span className="px-2 py-1 text-xs bg-[#1f2937] rounded-full text-[#8b949e]">Tennis</span>
-                <span className="px-2 py-1 text-xs bg-[#1f2937] rounded-full text-[#8b949e]">Pickleball</span>
                 <div className="relative inline-block">
                   <a 
                     href="https://letterboxd.com/hashirs" 

@@ -24,6 +24,7 @@ const Skills = () => {
                 <span className="skill-tag">TypeScript</span>
                 <span className="skill-tag">HTML/CSS</span>
                 <span className="skill-tag">JavaScript</span>
+                <span className="skill-tag">SQL</span>
                 <span className="skill-tag">R</span>
               </div>
             </div>

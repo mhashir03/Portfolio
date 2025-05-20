@@ -21,10 +21,14 @@ const Education = () => {
   "graduation": "May 2026",
   "courses": [
     "Data Structures",
+    "Algorithms",
     "Operating Systems",
+    "Databases",
+    "Distributed Systems",
     "Object Oriented Software Design",
     "Object Oriented Programming",
     "Computer Organization & Architecture",
+    "Software Engineering",
     "Foundations of Statistics"
   ]
 }`}
