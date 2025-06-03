@@ -35,22 +35,22 @@ const Experience = () => {
             </div>
             
             <div className="flex-1">
-              <span className="text-[#58a6ff]">Aug 2024 - Dec 2024</span>
-              <div className="text-[#e6edf3] font-bold">Software Engineer</div>
+              <span className="text-[#58a6ff]">May 2023 - Aug 2023</span>
+              <div className="text-[#e6edf3] font-bold">Software Engineer Intern</div>
               <div className="text-[#8b949e] flex items-center">
-                <span>Open Source with SLU</span>
+                <span>Geez Creationz</span>
                 <span className="mx-1">·</span>
                 <span className="text-[#8b949e]">St. Louis, MO</span>
               </div>
               <ul className="list-disc ml-6 text-[#8b949e] mt-1">
-                <li>Contributed to DADS project across 8 sprints, delivering features on CI/CD and Agile workflows</li>
-                <li>Spearheaded React.js front-end redesign for improved scalability and responsive UI/UX</li>
-                <li>Optimized PostgreSQL queries with indexing, boosting retrieval efficiency by 5%</li>
+                <li>Collaborated in a 3-person Agile team to design and develop the official GEEZ Creationz website, boosting client acquisition by 65% and contributing to $30K+ in new business within next 6 months</li>
+                <li>Delivered a fully responsive site ahead of schedule across 12 weekly sprints using HTML, CSS, JavaScript</li>
+                <li>Implemented SEO and performance optimizations, increasing organic traffic by 3x</li>
               </ul>
               <div className="flex flex-wrap mt-2">
-                <span className="skill-tag">Python</span>
-                <span className="skill-tag">React.js</span>
-                <span className="skill-tag">PostgreSQL</span>
+                <span className="skill-tag">HTML</span>
+                <span className="skill-tag">CSS</span>
+                <span className="skill-tag">JavaScript</span>
               </div>
             </div>
           </div>
