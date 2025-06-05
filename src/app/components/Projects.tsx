@@ -18,6 +18,22 @@ const Projects = () => {
 
             <div className="project-card">
               <div className="flex flex-col mb-2">
+                <h3 className="project-title mb-1">Property Recommendation System</h3>
+                <div className="inline-flex items-center">
+                  <a href="https://www.automax.ai/" target="_blank" rel="noopener noreferrer" className="text-[#58a6ff] text-sm hover:underline">Automax AI</a>
+                </div>
+              </div>
+              <p className="text-[#8b949e]">ML based system for recommending comparable properties for real estate appraisals.</p>
+              <div className="flex flex-wrap mt-2">
+                <span className="skill-tag">Python</span>
+                <span className="skill-tag">pandas</span>
+                <span className="skill-tag">numpy</span>
+              </div>
+              <a href="https://github.com/mhashir03/property-recommendation-system" target="_blank" rel="noopener noreferrer" className="terminal-link block mt-2">View on GitHub →</a>
+            </div>
+
+            <div className="project-card">
+              <div className="flex flex-col mb-2">
                 <h3 className="project-title mb-1">Ozzy</h3>
                 <div className="inline-flex items-center">
                   <div className="relative">
@@ -72,21 +88,6 @@ const Projects = () => {
             </div>
 
             <div className="project-card">
-              <div className="flex flex-col mb-2">
-              <h3 className="project-title">Personal Website</h3>
-              <p className="text-[#8b949e]">This website is a portfolio that highlights my experience, projects, and skills</p>
-              <div className="flex flex-wrap mt-2">
-                <span className="skill-tag">Next.js</span>
-                <span className="skill-tag">TypeScript</span>
-                <span className="skill-tag">JavaScript</span>
-                <span className="skill-tag">React.js</span>
-                <span className="skill-tag">Tailwind CSS</span>
-              </div>
-              <a href="https://github.com/mhashir03/Portfolio" target="_blank" rel="noopener noreferrer" className="terminal-link block mt-2">View on GitHub →</a>
-            </div>
-            </div>
-            
-            <div className="project-card">
               <h3 className="project-title">Scrapefy</h3>
               <p className="text-[#8b949e]">AI-powered web scraper that extracts and analyzes content from websites</p>
               <div className="flex flex-wrap mt-2">
@@ -98,7 +99,7 @@ const Projects = () => {
               </div>
               <a href="https://github.com/mhashir03/Scrapefy" target="_blank" rel="noopener noreferrer" className="terminal-link block mt-2">View on GitHub →</a>
             </div>
-            
+
           </div>
         </div>
       </div>
