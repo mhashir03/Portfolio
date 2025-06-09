@@ -14,24 +14,24 @@ const Skills = () => {
         </p>
         
         <div className="terminal-output">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div>
-              <div className="text-[#e6edf3] font-bold mb-1">Languages:</div>
-              <div className="flex flex-wrap">
+              <div className="text-[#e6edf3] font-bold mb-2">Languages:</div>
+              <div className="flex flex-wrap gap-1">
                 <span className="skill-tag">Python</span>
                 <span className="skill-tag">Java</span>
                 <span className="skill-tag">C/C++</span>
                 <span className="skill-tag">TypeScript</span>
-                <span className="skill-tag">HTML/CSS</span>
                 <span className="skill-tag">JavaScript</span>
-                <span className="skill-tag">SQL</span>
-                <span className="skill-tag">R</span>
+                <span className="skill-tag">HTML/CSS</span>
+                <span className="skill-tag">R</span> 
+                <span className="skill-tag">SQL (Postgres)</span>
               </div>
             </div>
 
             <div>
-              <div className="text-[#e6edf3] font-bold mb-1">Frameworks:</div>
-              <div className="flex flex-wrap">
+              <div className="text-[#e6edf3] font-bold mb-2">Frameworks:</div>
+              <div className="flex flex-wrap gap-1">
                 <span className="skill-tag">React Native</span>
                 <span className="skill-tag">React.js</span>
                 <span className="skill-tag">Next.js</span>
@@ -42,33 +42,15 @@ const Skills = () => {
             </div>
 
             <div>
-              <div className="text-[#e6edf3] font-bold mb-1">Libraries:</div>
-              <div className="flex flex-wrap">
-                <span className="skill-tag">Streamlit</span>
-                <span className="skill-tag">Lucide</span>
+              <div className="text-[#e6edf3] font-bold mb-2">AI/ML:</div>
+              <div className="flex flex-wrap gap-1">
+                <span className="skill-tag">pandas</span>
+                <span className="skill-tag">numpy</span>
+                <span className="skill-tag">joblib</span>
+                <span className="skill-tag">scikit-learn</span>
+                <span className="skill-tag">matplotlib</span>
+                <span className="skill-tag">seaborn</span>
                 <span className="skill-tag">Beautiful Soup</span>
-                <span className="skill-tag">Framer Motion</span>
-                <span className="skill-tag">Radix</span>
-                <span className="skill-tag">Shadcn</span>
-                <span className="skill-tag">OpenAI</span>
-                <span className="skill-tag">Ollama</span>
-                <span className="skill-tag">Gemini</span>
-              </div>
-            </div>
-            
-            <div>
-              <div className="text-[#e6edf3] font-bold mb-1">Developer Tools:</div>
-              <div className="flex flex-wrap">
-                <span className="skill-tag">Git</span>
-                <span className="skill-tag">Gradle</span>
-                <span className="skill-tag">JUnit</span>
-                <span className="skill-tag">Selenium</span>
-                <span className="skill-tag">PostgreSQL</span>
-                <span className="skill-tag">LaTeX</span>
-                <span className="skill-tag">Linux</span>
-                <span className="skill-tag">GitHub Actions</span>
-                <span className="skill-tag">VS Code</span>
-                <span className="skill-tag">Slack</span>
               </div>
             </div>
           </div>
