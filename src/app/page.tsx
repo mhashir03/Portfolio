@@ -26,6 +26,9 @@ export default function Home() {
 
       {/* Bento Grid Layout */}
       <div className="bento-grid">
+        {/* About Me Section - First in line */}
+        <About />
+
         {/* Experience Section */}
         <Experience />
 
@@ -37,9 +40,6 @@ export default function Home() {
 
         {/* Matrix Digital Rain Section */}
         <Quotes />
-
-        {/* About Me Section */}
-        <About />
 
         {/* Leadership Section */}
         <Leadership />
