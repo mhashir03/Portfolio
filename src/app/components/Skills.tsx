@@ -14,7 +14,7 @@ const Skills = () => {
         </p>
         
         <div className="terminal-output">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div>
               <div className="text-[#e6edf3] font-bold mb-2">Languages:</div>
               <div className="flex flex-wrap gap-1">
@@ -51,6 +51,20 @@ const Skills = () => {
                 <span className="skill-tag">matplotlib</span>
                 <span className="skill-tag">seaborn</span>
                 <span className="skill-tag">Beautiful Soup</span>
+              </div>
+            </div>
+
+            <div>
+              <div className="text-[#e6edf3] font-bold mb-2">DevOps & Cloud:</div>
+              <div className="flex flex-wrap gap-1">
+                <span className="skill-tag">Docker</span>
+                <span className="skill-tag">AWS S3</span>
+                <span className="skill-tag">GitHub Actions</span>
+                <span className="skill-tag">CI/CD</span>
+                <span className="skill-tag">Git</span>
+                <span className="skill-tag">GitHub</span>
+                <span className="skill-tag">Linux</span>
+                <span className="skill-tag">VS Code</span>
               </div>
             </div>
           </div>

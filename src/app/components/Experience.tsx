@@ -14,43 +14,100 @@ const Experience = () => {
         </p>
         <div className="terminal-output">
           <div className="flex flex-col md:flex-row gap-4">
+
+          {/* Headstarter */}
             <div className="flex-1">
               <span className="text-[#58a6ff]">May 2025 - Aug 2025</span>
               <div className="text-[#e6edf3] font-bold">Software Engineering Resident</div>
               <div className="text-[#8b949e] flex items-center">
                 <span>Headstarter</span>
                 <span className="mx-1">·</span>
-                <span className="text-[#8b949e]">Long Island, NY</span>
+                <span className="text-[#8b949e]">Long Island, New York</span>
               </div>
               <ul className="list-disc ml-6 text-[#8b949e] mt-1">
-                <li>Built 6 AI projects in 12 weeks, each tackling real-world problems with custom APIs and LLMs</li>
-                <li>Shipped 3 production-ready prototypes, tested by 20+ users with iterative feedback</li>
-                <li>Mentored by engineers from Google, Meta, Microsoft, Amazon, Apple, Nvidia, OpenAI, and top AI startups</li>
+                <li>Built ML pipelines with Computer Vision and OCR serving 1M+ users across healthcare and fintech sectors</li>
+                <li>Shipped 2 production-ready prototypes for 2 startups, tested by 200+ users with iterative feedback</li>
+                <li>Mentored by engineers from Google, Meta, Microsoft, Amazon, Apple, NVIDIA, Palantir, and OpenAI</li>
               </ul>
               <div className="flex flex-wrap mt-2">
-                <span className="skill-tag">AI</span>
-                <span className="skill-tag">LLMs</span>
-                <span className="skill-tag">API Development</span>
+                <span className="skill-tag">Python</span>
+                <span className="skill-tag">pandas</span>
+                <span className="skill-tag">numpy</span>
+                <span className="skill-tag">scikit-learn</span>
+                <span className="skill-tag">matplotlib</span>
+                <span className="skill-tag">seaborn</span>
+                <span className="skill-tag">joblib</span>
               </div>
             </div>
             
+            {/* Geez Creationz */}
             <div className="flex-1">
-              <span className="text-[#58a6ff]">May 2023 - Aug 2023</span>
+              <span className="text-[#58a6ff]">May 2023 - August 2023</span>
               <div className="text-[#e6edf3] font-bold">Software Engineer Intern</div>
               <div className="text-[#8b949e] flex items-center">
                 <span>Geez Creationz</span>
                 <span className="mx-1">·</span>
-                <span className="text-[#8b949e]">St. Louis, MO</span>
+                <span className="text-[#8b949e]">St. Louis, Missouri</span>
               </div>
               <ul className="list-disc ml-6 text-[#8b949e] mt-1">
-                <li>Collaborated in a 3-person Agile team to design and develop the official GEEZ Creationz website, boosting client acquisition by 65% and contributing to $30K+ in new business within next 6 months</li>
-                <li>Delivered a fully responsive site ahead of schedule across 12 weekly sprints using HTML, CSS, JavaScript</li>
-                <li>Implemented SEO and performance optimizations, increasing organic traffic by 3x</li>
+                <li>Collaborated in a 3-person Agile team to design and develop the official GEEZ Creationz website</li>
+                <li>Boosted client acquisition by 70%, contributing to $300K+ in new business within 6 months</li>
+                <li>Delivered a fully responsive site across 12 weekly sprints using TypeScript and React.js</li>
               </ul>
               <div className="flex flex-wrap mt-2">
-                <span className="skill-tag">HTML</span>
-                <span className="skill-tag">CSS</span>
-                <span className="skill-tag">JavaScript</span>
+                <span className="skill-tag">TypeScript</span>
+                <span className="skill-tag">React.js</span>
+                <span className="skill-tag">Tailwind CSS</span>
+                <span className="skill-tag">Next.js</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Experiences Row */}
+          <div className="flex flex-col md:flex-row gap-4 mt-6">
+
+            {/* Where's Religion? */}
+            <div className="flex-1">
+              <span className="text-[#58a6ff]">August 2025 - Present</span>
+              <div className="text-[#e6edf3] font-bold">Software Engineer</div>
+              <div className="text-[#8b949e] flex items-center">
+                <span>Where's Religion?</span>
+                <span className="mx-1">·</span>
+                <span className="text-[#8b949e]">St. Louis, Missouri</span>
+              </div>
+              <ul className="list-disc ml-6 text-[#8b949e] mt-1">
+                <li>Contributing to cross-platform app with 1,000+ users using TypeScript, React.js, React Native, TailwindCSS</li>
+                <li>Deploying with Docker, AWS S3, and GitHub Actions in an Agile workflow following SDLC</li>
+                <li>Collaborating with open-source team on code reviews, design, and performance improvements</li>
+              </ul>
+              <div className="flex flex-wrap mt-2">
+                <span className="skill-tag">Next.js</span>
+                <span className="skill-tag">React.js</span>
+                <span className="skill-tag">Tailwind CSS</span>
+                <span className="skill-tag">TypeScript</span>
+                <span className="skill-tag">React Native</span>
+                <span className="skill-tag">Docker</span>
+                <span className="skill-tag">AWS S3</span>
+              </div>
+            </div>
+
+            {/* TA for Operating Systems */}
+            <div className="flex-1">
+              <span className="text-[#58a6ff]">August 2025 - Present</span>
+              <div className="text-[#e6edf3] font-bold">Teaching Assistant</div>
+              <div className="text-[#8b949e] flex items-center">
+                <span>Saint Louis University</span>
+                <span className="mx-1">·</span>
+                <span className="text-[#8b949e]">St. Louis, Missouri</span>
+              </div>
+              <ul className="list-disc ml-6 text-[#8b949e] mt-1">
+                <li>Responsible for grading 500+ Operating Systems assignments for 28 students in C and other OS topics</li>
+                <li>Hold weekly office hours for 28 students, clarifying processes, threads, synchronization, and memory management</li>
+                <li>Guiding students through debugging multi-threaded C programs, reinforcing difficult topics</li>
+              </ul>
+              <div className="flex flex-wrap mt-2">
+                <span className="skill-tag">C</span>
+                <span className="skill-tag">Linux</span>
               </div>
             </div>
           </div>
