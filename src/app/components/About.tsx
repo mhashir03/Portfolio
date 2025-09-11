@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SpotifyNowPlaying from './Spotify';
+import MiniSnake from './MiniSnake';
 
 const About = () => {
   const [isMoviesHovered, setIsMoviesHovered] = useState(false);
@@ -86,6 +87,11 @@ const About = () => {
         
         {/* Spotify Section */}
         <SpotifyNowPlaying />
+
+        {/* Mini Game */}
+        <div className="mt-4">
+          <MiniSnake />
+        </div>
       </div>
     </div>
   );
