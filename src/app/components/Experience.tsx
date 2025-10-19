@@ -18,7 +18,7 @@ const Experience = () => {
           {/* Headstarter */}
             <div className="flex-1">
               <span className="text-[#58a6ff]">May 2025 - Aug 2025</span>
-              <div className="text-[#e6edf3] font-bold">Software Engineering Resident</div>
+              <div className="text-[#e6edf3] font-bold">Software Engineer Intern</div>
               <div className="text-[#8b949e] flex items-center">
                 <span>Headstarter</span>
                 <span className="mx-1">·</span>
@@ -26,8 +26,8 @@ const Experience = () => {
               </div>
               <ul className="list-disc ml-6 text-[#8b949e] mt-1">
                 <li>Built ML pipelines with Computer Vision and OCR serving 1M+ users across healthcare and fintech sectors</li>
-                <li>Shipped 2 production-ready prototypes for 2 startups, tested by 200+ users with iterative feedback</li>
-                <li>Mentored by engineers from Google, Meta, Microsoft, Amazon, Apple, NVIDIA, Palantir, and OpenAI</li>
+                <li>Deployed scalable ML microservices on AWS (Lambda, S3, API Gateway) to support production workloads</li>
+                <li>Collaborated with engineers from Google, Meta, Microsoft, Amazon, Apple, NVIDIA, Palantir, and OpenAI</li>
               </ul>
               <div className="flex flex-wrap mt-2">
                 <span className="skill-tag">Python</span>
@@ -69,7 +69,7 @@ const Experience = () => {
             {/* Where's Religion? */}
             <div className="flex-1">
               <span className="text-[#58a6ff]">August 2025 - Present</span>
-              <div className="text-[#e6edf3] font-bold">Software Engineer</div>
+              <div className="text-[#e6edf3] font-bold">Software Engineer Intern</div>
               <div className="text-[#8b949e] flex items-center">
                 <span>Where's Religion?</span>
                 <span className="mx-1">·</span>
