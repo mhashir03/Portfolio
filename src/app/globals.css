@@ -514,3 +514,20 @@ h1, h2, h3, h4, h5, h6 {
   from { opacity: 1 }
   to { opacity: 0 }
 }
+
+/* Hide global scrollbar while preserving scroll */
+html {
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+/* WebKit (Chrome, Safari, Edge) */
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* IE/Old Edge */
+body {
+  -ms-overflow-style: none;
+}

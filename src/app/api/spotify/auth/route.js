@@ -8,7 +8,8 @@ const scopes = [
   'user-read-currently-playing',
   'user-read-playback-state',
   'user-modify-playback-state',
-  'user-read-recently-played'
+  'user-read-recently-played',
+  'user-top-read'
 ];
 
 export async function GET() {
@@ -79,6 +80,7 @@ export async function GET() {
             <li>Read your playback state</li>
             <li>Control your playback</li>
             <li>Read your recently played tracks</li>
+            <li>Read your top tracks</li>
           </ul>
           <p>Click the button below to authorize with Spotify:</p>
           <a href="${authUrl}" class="button">Authorize with Spotify</a>

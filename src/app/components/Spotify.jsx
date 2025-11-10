@@ -5,6 +5,8 @@ import React, { useEffect, useState, useRef } from 'react';
 const SpotifyNowPlaying = () => {
   const [data, setData] = useState(null);
   const [recentTracks, setRecentTracks] = useState([]);
+  const [topTracks, setTopTracks] = useState([]);
+  const [activeTab, setActiveTab] = useState('recently-played');
   const [loading, setLoading] = useState(true);
   const [player, setPlayer] = useState(null);
   const [playerState, setPlayerState] = useState(null);
@@ -29,6 +31,19 @@ const SpotifyNowPlaying = () => {
       }
     } catch (error) {
       console.error('Error fetching recently played tracks:', error);
+    }
+  };
+
+  // Define fetchTopTracks function
+  const fetchTopTracks = async () => {
+    try {
+      const response = await fetch('/api/spotify/top-tracks');
+      const result = await response.json();
+      if (result.success && result.topTracks) {
+        setTopTracks(result.topTracks);
+      }
+    } catch (error) {
+      console.error('Error fetching top tracks:', error);
     }
   };
 
@@ -203,6 +218,11 @@ const SpotifyNowPlaying = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Fetch top tracks
+  useEffect(() => {
+    fetchTopTracks();
+  }, []);
+
   // Play the current track
   const playTrack = async (trackUri) => {
     if (!isPlayerReady) return;
@@ -351,47 +371,114 @@ const SpotifyNowPlaying = () => {
             <p>Not currently listening to anything</p>
           </div>
           
-          {/* Recently Played Tracks */}
-          {recentTracks.length > 0 && (
+          {/* Tabs and Tracks */}
+          {(recentTracks.length > 0 || topTracks.length > 0) && (
             <div className="mt-3">
-              <p className="text-[#e6edf3] font-bold mb-2">Recently Played:</p>
-              <div className="space-y-2">
-                {recentTracks.map((track, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-center p-2 bg-[#161b22] rounded border border-[#30363d] hover:border-[#58a6ff] transition-all"
-                  >
-                    {track.albumImageUrl && (
-                      <img 
-                        src={track.albumImageUrl} 
-                        alt={`${track.title} album art`}
-                        className="w-10 h-10 rounded mr-2"
-                      />
-                    )}
-                    <div className="flex-1 min-w-0">
-                      <a 
-                        href={track.songUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        className="text-[#58a6ff] hover:underline text-sm truncate block"
-                      >
-                        {track.title}
-                      </a>
-                      <p className="text-xs text-[#8b949e] truncate">{track.artist}</p>
-                    </div>
-                    {isPlayerReady && (
-                      <button 
-                        onClick={() => playTrack(`spotify:track:${track.songUrl.split('/').pop()}`)}
-                        className="ml-2 w-8 h-8 flex items-center justify-center bg-[#1DB954] rounded-full hover:bg-opacity-80 hover:scale-110 hover:shadow-md transition-all cursor-pointer"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-black" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </button>
-                    )}
-                  </div>
-                ))}
+              {/* Tabs */}
+              <div className="flex space-x-2 mb-2 border-b border-[#30363d]">
+                <button
+                  onClick={() => setActiveTab('recently-played')}
+                  className={`px-3 py-2 text-sm font-bold transition-all ${
+                    activeTab === 'recently-played'
+                      ? 'text-[#e6edf3] border-b-2 border-[#58a6ff]'
+                      : 'text-[#8b949e] hover:text-[#e6edf3]'
+                  }`}
+                >
+                  Recently Played
+                </button>
+                <button
+                  onClick={() => setActiveTab('top-tracks')}
+                  className={`px-3 py-2 text-sm font-bold transition-all ${
+                    activeTab === 'top-tracks'
+                      ? 'text-[#e6edf3] border-b-2 border-[#58a6ff]'
+                      : 'text-[#8b949e] hover:text-[#e6edf3]'
+                  }`}
+                >
+                  Top Tracks
+                </button>
               </div>
+              
+              {/* Recently Played Tracks */}
+              {activeTab === 'recently-played' && recentTracks.length > 0 && (
+                <div className="space-y-2">
+                  {recentTracks.map((track, index) => (
+                    <div 
+                      key={index} 
+                      className="flex items-center p-2 bg-[#161b22] rounded border border-[#30363d] hover:border-[#58a6ff] transition-all"
+                    >
+                      {track.albumImageUrl && (
+                        <img 
+                          src={track.albumImageUrl} 
+                          alt={`${track.title} album art`}
+                          className="w-10 h-10 rounded mr-2"
+                        />
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <a 
+                          href={track.songUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-[#58a6ff] hover:underline text-sm truncate block"
+                        >
+                          {track.title}
+                        </a>
+                        <p className="text-xs text-[#8b949e] truncate">{track.artist}</p>
+                      </div>
+                      {isPlayerReady && (
+                        <button 
+                          onClick={() => playTrack(`spotify:track:${track.songUrl.split('/').pop()}`)}
+                          className="ml-2 w-8 h-8 flex items-center justify-center bg-[#1DB954] rounded-full hover:bg-opacity-80 hover:scale-110 hover:shadow-md transition-all cursor-pointer"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-black" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+              
+              {/* Top Tracks */}
+              {activeTab === 'top-tracks' && topTracks.length > 0 && (
+                <div className="space-y-2">
+                  {topTracks.map((track, index) => (
+                    <div 
+                      key={index} 
+                      className="flex items-center p-2 bg-[#161b22] rounded border border-[#30363d] hover:border-[#58a6ff] transition-all"
+                    >
+                      {track.albumImageUrl && (
+                        <img 
+                          src={track.albumImageUrl} 
+                          alt={`${track.title} album art`}
+                          className="w-10 h-10 rounded mr-2"
+                        />
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <a 
+                          href={track.songUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-[#58a6ff] hover:underline text-sm truncate block"
+                        >
+                          {track.title}
+                        </a>
+                        <p className="text-xs text-[#8b949e] truncate">{track.artist}</p>
+                      </div>
+                      {isPlayerReady && (
+                        <button 
+                          onClick={() => playTrack(`spotify:track:${track.songUrl.split('/').pop()}`)}
+                          className="ml-2 w-8 h-8 flex items-center justify-center bg-[#1DB954] rounded-full hover:bg-opacity-80 hover:scale-110 hover:shadow-md transition-all cursor-pointer"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-black" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -521,47 +608,114 @@ const SpotifyNowPlaying = () => {
           </div>
         )}
         
-        {/* Recently Played Tracks */}
-        {recentTracks.length > 0 && (
+        {/* Tabs and Tracks */}
+        {(recentTracks.length > 0 || topTracks.length > 0) && (
           <div className="mt-3">
-            <p className="text-[#e6edf3] font-bold mb-2">Recently Played:</p>
-            <div className="space-y-2">
-              {recentTracks.map((track, index) => (
-                <div 
-                  key={index} 
-                  className="flex items-center p-2 bg-[#161b22] rounded border border-[#30363d] hover:border-[#58a6ff] transition-all"
-                >
-                  {track.albumImageUrl && (
-                    <img 
-                      src={track.albumImageUrl} 
-                      alt={`${track.title} album art`}
-                      className="w-10 h-10 rounded mr-2"
-                    />
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <a 
-                      href={track.songUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="text-[#58a6ff] hover:underline text-sm truncate block"
-                    >
-                      {track.title}
-                    </a>
-                    <p className="text-xs text-[#8b949e] truncate">{track.artist}</p>
-                  </div>
-                  {isPlayerReady && (
-                    <button 
-                      onClick={() => playTrack(`spotify:track:${track.songUrl.split('/').pop()}`)}
-                      className="ml-2 w-8 h-8 flex items-center justify-center bg-[#1DB954] rounded-full hover:bg-opacity-80 hover:scale-110 hover:shadow-md transition-all cursor-pointer"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-black" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </button>
-                  )}
-                </div>
-              ))}
+            {/* Tabs */}
+            <div className="flex space-x-2 mb-2 border-b border-[#30363d]">
+              <button
+                onClick={() => setActiveTab('recently-played')}
+                className={`px-3 py-2 text-sm font-bold transition-all ${
+                  activeTab === 'recently-played'
+                    ? 'text-[#e6edf3] border-b-2 border-[#58a6ff]'
+                    : 'text-[#8b949e] hover:text-[#e6edf3]'
+                }`}
+              >
+                Recently Played
+              </button>
+              <button
+                onClick={() => setActiveTab('top-tracks')}
+                className={`px-3 py-2 text-sm font-bold transition-all ${
+                  activeTab === 'top-tracks'
+                    ? 'text-[#e6edf3] border-b-2 border-[#58a6ff]'
+                    : 'text-[#8b949e] hover:text-[#e6edf3]'
+                }`}
+              >
+                Top Tracks
+              </button>
             </div>
+            
+            {/* Recently Played Tracks */}
+            {activeTab === 'recently-played' && recentTracks.length > 0 && (
+              <div className="space-y-2">
+                {recentTracks.map((track, index) => (
+                  <div 
+                    key={index} 
+                    className="flex items-center p-2 bg-[#161b22] rounded border border-[#30363d] hover:border-[#58a6ff] transition-all"
+                  >
+                    {track.albumImageUrl && (
+                      <img 
+                        src={track.albumImageUrl} 
+                        alt={`${track.title} album art`}
+                        className="w-10 h-10 rounded mr-2"
+                      />
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <a 
+                        href={track.songUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-[#58a6ff] hover:underline text-sm truncate block"
+                      >
+                        {track.title}
+                      </a>
+                      <p className="text-xs text-[#8b949e] truncate">{track.artist}</p>
+                    </div>
+                    {isPlayerReady && (
+                      <button 
+                        onClick={() => playTrack(`spotify:track:${track.songUrl.split('/').pop()}`)}
+                        className="ml-2 w-8 h-8 flex items-center justify-center bg-[#1DB954] rounded-full hover:bg-opacity-80 hover:scale-110 hover:shadow-md transition-all cursor-pointer"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-black" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </button>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+            
+            {/* Top Tracks */}
+            {activeTab === 'top-tracks' && topTracks.length > 0 && (
+              <div className="space-y-2">
+                {topTracks.map((track, index) => (
+                  <div 
+                    key={index} 
+                    className="flex items-center p-2 bg-[#161b22] rounded border border-[#30363d] hover:border-[#58a6ff] transition-all"
+                  >
+                    {track.albumImageUrl && (
+                      <img 
+                        src={track.albumImageUrl} 
+                        alt={`${track.title} album art`}
+                        className="w-10 h-10 rounded mr-2"
+                      />
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <a 
+                        href={track.songUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="text-[#58a6ff] hover:underline text-sm truncate block"
+                      >
+                        {track.title}
+                      </a>
+                      <p className="text-xs text-[#8b949e] truncate">{track.artist}</p>
+                    </div>
+                    {isPlayerReady && (
+                      <button 
+                        onClick={() => playTrack(`spotify:track:${track.songUrl.split('/').pop()}`)}
+                        className="ml-2 w-8 h-8 flex items-center justify-center bg-[#1DB954] rounded-full hover:bg-opacity-80 hover:scale-110 hover:shadow-md transition-all cursor-pointer"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-black" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </button>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>
