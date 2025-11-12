@@ -7,7 +7,7 @@ import Education from './components/Education';
 import Skills from './components/Skills';
 import Quotes from './components/Quotes';
 import About from './components/About';
-import Leadership from './components/Leadership';
+import Music from './components/Music';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 
@@ -29,6 +29,9 @@ export default function Home() {
         {/* About Me Section - First in line */}
         <About />
 
+        {/* Music Section */}
+        <Music />
+
         {/* Experience Section */}
         <Experience />
 
@@ -40,9 +43,6 @@ export default function Home() {
 
         {/* Matrix Digital Rain Section */}
         <Quotes />
-
-        {/* Leadership Section */}
-        <Leadership />
 
         {/* Projects Section - Large Item */}
         <Projects />

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Projects = () => {
   return (
-    <div className="bento-item bento-item-large bento-item-full-width">
+    <div className="bento-item bento-item-large bento-item-full-width bento-projects">
       <div className="terminal-header">
         <span className="terminal-prompt">~</span>
         <span className="ml-2 text-[#e6edf3]">Projects</span>
@@ -88,16 +88,20 @@ const Projects = () => {
             </div>
 
             <div className="project-card">
-              <h3 className="project-title">Scrapefy</h3>
-              <p className="text-[#8b949e]">AI-powered web scraper that extracts and analyzes content from websites</p>
+              <div className="flex flex-col mb-2">
+                <h3 className="project-title mb-1">Multimodal PA Pipeline</h3>
+                <div className="inline-flex items-center">
+                  <a href="https://www.mandolin.com/" target="_blank" rel="noopener noreferrer" className="text-[#58a6ff] text-sm hover:underline">Mandolin</a>
+                </div>
+              </div>
+              <p className="text-[#8b949e]">Automated workflow that OCRs medical referral packets, extracts structured data, and fills prior authorization PDFs.</p>
               <div className="flex flex-wrap mt-2">
                 <span className="skill-tag">Python</span>
-                <span className="skill-tag">Langchain</span>
-                <span className="skill-tag">Selenium</span>
-                <span className="skill-tag">Streamlit</span>
-                <span className="skill-tag">BeautifulSoup</span>
+                <span className="skill-tag">OCR</span>
+                <span className="skill-tag">NLP</span>
+                <span className="skill-tag">PyTorch</span>
               </div>
-              <a href="https://github.com/mhashir03/Scrapefy" target="_blank" rel="noopener noreferrer" className="terminal-link block mt-2">View on GitHub →</a>
+              <a href="https://github.com/mhashir03/Multimodal-PA-Pipeline" target="_blank" rel="noopener noreferrer" className="terminal-link block mt-2">View on GitHub →</a>
             </div>
 
           </div>

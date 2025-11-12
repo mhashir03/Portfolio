@@ -2,7 +2,7 @@ import React from 'react';
 
 const Quotes = () => {
   return (
-    <div className="bento-item">
+    <div className="bento-item bento-quotes">
       <div className="terminal-header">
         <span className="terminal-prompt">~</span>
         <span className="ml-2 text-[#e6edf3]">Quotes</span>

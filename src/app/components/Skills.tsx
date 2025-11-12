@@ -2,7 +2,7 @@ import React from 'react';
 
 const Skills = () => {
   return (
-    <div className="bento-item">
+    <div className="bento-item bento-skills">
       <div className="terminal-header">
         <span className="terminal-prompt">~</span>
         <span className="ml-2 text-[#e6edf3]">Skills</span>
@@ -23,34 +23,36 @@ const Skills = () => {
                 <span className="skill-tag">C/C++</span>
                 <span className="skill-tag">TypeScript</span>
                 <span className="skill-tag">JavaScript</span>
-                <span className="skill-tag">HTML/CSS</span>
-                <span className="skill-tag">R</span> 
-                <span className="skill-tag">SQL (Postgres)</span>
+                <span className="skill-tag">SQL</span>
               </div>
             </div>
 
             <div>
               <div className="text-[#e6edf3] font-bold mb-2">Frameworks:</div>
               <div className="flex flex-wrap gap-1">
-                <span className="skill-tag">React Native</span>
                 <span className="skill-tag">React.js</span>
                 <span className="skill-tag">Next.js</span>
+                <span className="skill-tag">React Native</span>
                 <span className="skill-tag">Expo</span>
+                <span className="skill-tag">Spring Boot</span>
                 <span className="skill-tag">Tailwind CSS</span>
-                <span className="skill-tag">Langchain</span>
+                <span className="skill-tag">LangChain</span>
               </div>
             </div>
 
             <div>
-              <div className="text-[#e6edf3] font-bold mb-2">AI/ML:</div>
+              <div className="text-[#e6edf3] font-bold mb-2">Data &amp; ML:</div>
               <div className="flex flex-wrap gap-1">
-                <span className="skill-tag">pandas</span>
-                <span className="skill-tag">numpy</span>
-                <span className="skill-tag">joblib</span>
+                <span className="skill-tag">Pandas</span>
+                <span className="skill-tag">NumPy</span>
                 <span className="skill-tag">scikit-learn</span>
+                <span className="skill-tag">PyTorch</span>
+                <span className="skill-tag">OpenCV</span>
+                <span className="skill-tag">spaCy</span>
                 <span className="skill-tag">matplotlib</span>
                 <span className="skill-tag">seaborn</span>
-                <span className="skill-tag">Beautiful Soup</span>
+                <span className="skill-tag">BeautifulSoup</span>
+                <span className="skill-tag">joblib</span>
               </div>
             </div>
 
@@ -58,13 +60,9 @@ const Skills = () => {
               <div className="text-[#e6edf3] font-bold mb-2">DevOps & Cloud:</div>
               <div className="flex flex-wrap gap-1">
                 <span className="skill-tag">Docker</span>
-                <span className="skill-tag">AWS S3</span>
-                <span className="skill-tag">GitHub Actions</span>
-                <span className="skill-tag">CI/CD</span>
-                <span className="skill-tag">Git</span>
-                <span className="skill-tag">GitHub</span>
-                <span className="skill-tag">Linux</span>
-                <span className="skill-tag">VS Code</span>
+                <span className="skill-tag">AWS</span>
+                <span className="skill-tag">MongoDB</span>
+                <span className="skill-tag">GitHub Actions (CI/CD)</span>
               </div>
             </div>
           </div>

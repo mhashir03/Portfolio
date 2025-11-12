@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 
-const SpotifyNowPlaying = () => {
+const SpotifyNowPlaying = ({ className = 'mt-3' }) => {
   const [data, setData] = useState(null);
   const [recentTracks, setRecentTracks] = useState([]);
   const [topTracks, setTopTracks] = useState([]);
@@ -309,7 +309,7 @@ const SpotifyNowPlaying = () => {
 
   if (loading) {
     return (
-      <div className="mt-3 text-[#8b949e]">
+      <div className={`text-[#8b949e] ${className}`}>
         <div className="flex justify-between items-center">
           <div>
             <span className="terminal-prompt">$</span>
@@ -343,7 +343,7 @@ const SpotifyNowPlaying = () => {
 
   if (!data || !data.isPlaying) {
     return (
-      <div className="mt-3 text-[#8b949e]">
+      <div className={`text-[#8b949e] ${className}`}>
         <div className="flex justify-between items-center">
           <div>
             <span className="terminal-prompt">$</span>
@@ -487,7 +487,7 @@ const SpotifyNowPlaying = () => {
   }
 
   return (
-    <div className="mt-3 text-[#8b949e]">
+    <div className={`text-[#8b949e] ${className}`}>
       <div className="flex justify-between items-center">
         <div>
           <span className="terminal-prompt">$</span>

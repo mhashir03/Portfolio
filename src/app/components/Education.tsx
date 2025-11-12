@@ -2,7 +2,7 @@ import React from 'react';
 
 const Education = () => {
   return (
-    <div className="bento-item">
+    <div className="bento-item bento-education">
       <div className="terminal-header">
         <span className="terminal-prompt">~</span>
         <span className="ml-2 text-[#e6edf3]">Education</span>
@@ -20,16 +20,13 @@ const Education = () => {
   "degree": "Computer Science",
   "graduation": "May 2026",
   "courses": [
-    "Data Structures",
-    "Algorithms",
-    "Operating Systems",
-    "Databases",
-    "Distributed Systems",
-    "Object Oriented Software Design",
-    "Object Oriented Programming",
-    "Computer Organization & Architecture",
-    "Software Engineering",
-    "Foundations of Statistics"
+    "Data Structures (C++)",
+    "Algorithms (C++)",
+    "Databases (SQL)",
+    "Operating Systems (C)",
+    "Distributed Computing (C)",
+    "Software Engineering (Java)",
+    "Object-Oriented Programming (Java)"
   ]
 }`}
           </pre>
