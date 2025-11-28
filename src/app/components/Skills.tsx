@@ -35,6 +35,7 @@ const Skills = () => {
                 <span className="skill-tag">React Native</span>
                 <span className="skill-tag">Expo</span>
                 <span className="skill-tag">Spring Boot</span>
+                <span className="skill-tag">Spring Data JPA</span>
                 <span className="skill-tag">Tailwind CSS</span>
                 <span className="skill-tag">LangChain</span>
               </div>
@@ -62,6 +63,7 @@ const Skills = () => {
                 <span className="skill-tag">Docker</span>
                 <span className="skill-tag">AWS</span>
                 <span className="skill-tag">MongoDB</span>
+                <span className="skill-tag">Apache Kafka</span>
                 <span className="skill-tag">GitHub Actions (CI/CD)</span>
               </div>
             </div>

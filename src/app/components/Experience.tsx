@@ -2,28 +2,36 @@ import React from 'react';
 
 const experiences = [
   {
+    color: '#321B0F',
+    company: 'JP Morgan Chase & Co.',
+    role: 'Software Engineer',
+    timeframe: 'Nov 2025',
+    location: 'Manhattan, New York',
+    summary: 'Built a transaction processing system with Kafka and Spring Boot for JPMC SWE Program.',
+  },
+  {
     color: '#04122c',
     company: 'Open Politic',
     role: 'Co‑Founder',
-    timeframe: 'Oct 2025 – Present',
+    timeframe: 'Oct 2025 – Dec 2025',
     location: 'St. Louis, Missouri',
-    summary: 'Making government policy accessible and searchable for everyone.',
+    summary: 'Built a full-stack U.S. policy search platform with Next.js and Spring Boot.',
   },
   {
     color: '#00e2fb',
     company: "Where's Religion?",
-    role: 'Software Engineer Intern',
-    timeframe: 'Aug 2025 – Present',
+    role: 'Software Engineer',
+    timeframe: 'Aug 2025 – Dec 2025',
     location: 'St. Louis, Missouri',
-    summary: 'Helping 1,000+ organizers find their people—on every screen.',
+    summary: 'Developing cross-platform features with React Native and TypeScript on AWS.',
   },
   {
     color: '#033ca5',
     company: 'Saint Louis University',
     role: 'Teaching Assistant · Operating Systems',
-    timeframe: 'Aug 2025 – Present',
+    timeframe: 'Aug 2025 – Dec 2025',
     location: 'St. Louis, Missouri',
-    summary: 'Lead labs and office hours, helping classmates untangle operating systems bugs.',
+    summary: 'Holding office hours and grading assignments in C.',
   },
   {
     color: '#2afccf',
@@ -31,7 +39,7 @@ const experiences = [
     role: 'Software Engineer Intern',
     timeframe: 'Jun 2025 – Aug 2025',
     location: 'Long Island, New York',
-    summary: 'Taught machines to read documents so humans don’t have to.',
+    summary: <>Built ML pipelines with Computer Vision and OCR for <a href="https://www.mandolin.com/" target="_blank" rel="noopener noreferrer" className="text-[#58a6ff] hover:underline">Mandolin</a> and <a href="https://www.automax.ai/" target="_blank" rel="noopener noreferrer" className="text-[#58a6ff] hover:underline">Automax AI</a>.</>,
   },
   {
     color: '#fff600',
@@ -39,7 +47,7 @@ const experiences = [
     role: 'Software Engineer Intern',
     timeframe: 'Jun 2023 – Aug 2023',
     location: 'St. Louis, Missouri',
-    summary: 'Launched the site and helped turn clicks into clients.',
+    summary: 'Launched the company website with React to drive client acquisition.',
   },
 ];
 

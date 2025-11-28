@@ -18,7 +18,7 @@ const About = () => {
         </p>
 
         <div className="terminal-output">
-          <p className="mb-1 text-sm">Developer by day. Off-hours, I'm usually working on my tennis serve, getting lost in a book, or puzzling through a chess line I probably overestimated. I like good writing, quiet mornings, and games that reward patience. Code pays the bills; the rest keeps me curious.</p>
+          <p className="mb-1 text-sm">Full Stack Developer who loves building things that makes an impact. Open to full-time roles in the USA.</p>
 
           <div className="flex flex-wrap gap-2 mt-2">
             <div className="relative inline-block">
