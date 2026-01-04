@@ -432,7 +432,7 @@ const MiniChess: React.FC = () => {
   // Render the board
   const renderBoard = () => {
     const board = game.board();
-    const squares: JSX.Element[] = [];
+    const squares: React.ReactElement[] = [];
     const isFlipped = playerColor === 'b';
 
     for (let displayRow = 0; displayRow < 8; displayRow++) {
