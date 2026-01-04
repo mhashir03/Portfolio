@@ -96,7 +96,7 @@ const PieceSVG: React.FC<{ type: PieceSymbol; color: Color }> = ({ type, color }
   const stroke = isWhite ? '#1a1a1a' : '#FFFFFF';
   const strokeWidth = isWhite ? '1.5' : '1';
   
-  const pieces: Record<PieceSymbol, JSX.Element> = {
+  const pieces: Record<PieceSymbol, React.ReactElement> = {
     k: (
       <svg viewBox="0 0 45 45" className="w-7 h-7 sm:w-8 sm:h-8">
         <g fill={fill} stroke={stroke} strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
