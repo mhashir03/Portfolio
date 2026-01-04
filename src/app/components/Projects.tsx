@@ -1,114 +1,134 @@
 import React from 'react';
 
+const projects = [
+  {
+    title: 'Midas Core',
+    company: 'JPMorgan Chase',
+    description: 'Real-time transaction processing system using Spring Boot and Apache Kafka with validation, database audit trails, and REST APIs.',
+    tech: ['Java', 'Spring Boot', 'Kafka', 'JPA', 'REST'],
+    github: 'https://github.com/mhashir03/Midas-Core',
+  },
+  {
+    title: 'Ozzy',
+    badge: '🏆 Winner',
+    badgeContext: 'HackSLU 2025',
+    description: 'Mobile app helping users with speech difficulties communicate more effectively.',
+    tech: ['React Native', 'TypeScript', 'Expo'],
+    github: 'https://github.com/mhashir03/Ozzy',
+    live: 'https://devpost.com/software/ozzy',
+    liveLabel: 'Devpost',
+    featured: true,
+  },
+  {
+    title: 'Kira',
+    badge: '⭐ Featured',
+    badgeContext: 'Google DevFest 2025',
+    description: 'Web app helping users understand symptoms and assess potential health concerns.',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    github: 'https://github.com/mhashir03/Kira',
+    live: 'https://www.usekiraapp.com/',
+    liveLabel: 'Website',
+    featured: true,
+  },
+  {
+    title: 'Property Recommendation System',
+    company: 'Automax AI',
+    companyUrl: 'https://www.automax.ai/',
+    description: 'ML-based system for recommending comparable properties for real estate appraisals.',
+    tech: ['Python', 'pandas', 'NumPy'],
+    github: 'https://github.com/mhashir03/property-recommendation-system',
+  },
+  {
+    title: 'Multimodal PA Pipeline',
+    company: 'Mandolin',
+    companyUrl: 'https://www.mandolin.com/',
+    description: 'Automated workflow using OCR to extract data and fill prior authorization PDFs.',
+    tech: ['Python', 'OCR', 'PyTorch', 'NLP'],
+    github: 'https://github.com/mhashir03/Multimodal-PA-Pipeline',
+  },
+];
+
 const Projects = () => {
   return (
-    <div className="bento-item bento-item-large bento-item-full-width bento-projects">
-      <div className="terminal-header">
-        <span className="terminal-prompt">~</span>
-        <span className="ml-2 text-[#e6edf3]">Projects</span>
-      </div>
-      <div className="terminal-content">
-        <p>
-          <span className="terminal-prompt">$</span>
-          <span className="terminal-command"> find ./projects -type f -name "*.md" | xargs cat</span>
-        </p>
+    <section id="projects" className="section">
+      <div className="container">
+        <div className="section-header">
+          <p className="section-title">Projects</p>
+          <h2>Things I've Built</h2>
+        </div>
         
-        <div className="terminal-output">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-
-            <div className="project-card">
-              <div className="flex flex-col mb-2">
-                <h3 className="project-title mb-1">Property Recommendation System</h3>
-                <div className="inline-flex items-center">
-                  <a href="https://www.automax.ai/" target="_blank" rel="noopener noreferrer" className="text-[#58a6ff] text-sm hover:underline">Automax AI</a>
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <article 
+              key={project.title} 
+              className={`project-card ${project.featured ? 'card-featured' : ''}`}
+            >
+              {project.badge && (
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="project-badge">{project.badge}</span>
+                  {project.badgeContext && (
+                    <span className="text-xs text-[--color-text-muted]">{project.badgeContext}</span>
+                  )}
                 </div>
+              )}
+              
+              {project.company && (
+                <a 
+                  href={project.companyUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="project-company"
+                >
+                  {project.company} ↗
+                </a>
+              )}
+              
+              <h3 className="project-title">{project.title}</h3>
+              
+              <p className="project-description">{project.description}</p>
+              
+              <div className="project-tags">
+                {project.tech.map((tech) => (
+                  <span key={tech} className="tag">{tech}</span>
+                ))}
               </div>
-              <p className="text-[#8b949e]">ML based system for recommending comparable properties for real estate appraisals.</p>
-              <div className="flex flex-wrap mt-2">
-                <span className="skill-tag">Python</span>
-                <span className="skill-tag">pandas</span>
-                <span className="skill-tag">numpy</span>
+              
+              <div className="project-links">
+                {project.github && (
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                  </a>
+                )}
+                {project.live && (
+                  <a 
+                    href={project.live} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                      <polyline points="15 3 21 3 21 9"/>
+                      <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                    {project.liveLabel || 'Live'}
+                  </a>
+                )}
               </div>
-              <a href="https://github.com/mhashir03/property-recommendation-system" target="_blank" rel="noopener noreferrer" className="terminal-link block mt-2">View on GitHub →</a>
-            </div>
-
-            <div className="project-card">
-              <div className="flex flex-col mb-2">
-                <h3 className="project-title mb-1">Ozzy</h3>
-                <div className="inline-flex items-center">
-                  <div className="relative">
-                    <div className="bg-gradient-to-r from-[#f0883e] to-[#f5af19] text-[#0d1117] text-xs font-bold py-1 px-3 rounded-md flex items-center animate-pulse">
-                      <span className="mr-1">🏆</span>
-                      <span className="font-mono tracking-wider">WINNER</span>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#f0883e] to-[#f5af19] rounded-md blur-sm opacity-40 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                  </div>
-                  <span className="text-[#58a6ff] ml-2 text-sm">HackSLU 2025</span>
-                </div>
-              </div>
-              <p className="text-[#8b949e]">Mobile app designed to help users with speech difficulties communicate more effectively</p>
-              <div className="flex flex-wrap mt-2">
-                <span className="skill-tag">React Native</span>
-                <span className="skill-tag">TypeScript</span>
-                <span className="skill-tag">JavaScript</span>
-                <span className="skill-tag">Expo</span>
-              </div>
-              <div className="flex space-x-4 mt-2">
-                <a href="https://github.com/mhashir03/Ozzy" target="_blank" rel="noopener noreferrer" className="terminal-link">View on GitHub →</a>
-                <a href="https://devpost.com/software/ozzy" target="_blank" rel="noopener noreferrer" className="terminal-link">Devpost →</a>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <div className="flex flex-col mb-2">
-                <h3 className="project-title mb-1">Kira</h3>
-                <div className="inline-flex items-center">
-                  <div className="relative">
-                    <div className="bg-gradient-to-r from-[#f0883e] to-[#f5af19] text-[#0d1117] text-xs font-bold py-1 px-3 rounded-md flex items-center animate-pulse">
-                      <span className="mr-1">🏆</span>
-                      <span className="font-mono tracking-wider">FEATURED</span>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#f0883e] to-[#f5af19] rounded-md blur-sm opacity-40 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                  </div>
-                  <span className="text-[#58a6ff] ml-2 text-sm">Google DevFest 2025</span>
-                </div>
-              </div>
-              <p className="text-[#8b949e]">Web app designed to help users understand their symptoms and assess potential health</p>
-              <div className="flex flex-wrap mt-2">
-                <span className="skill-tag">Next.js</span>
-                <span className="skill-tag">TypeScript</span>
-                <span className="skill-tag">JavaScript</span>
-                <span className="skill-tag">Tailwind CSS</span>
-                <span className="skill-tag">React.js</span>
-              </div>
-              <div className="flex space-x-4 mt-2">
-                <a href="https://github.com/mhashir03/Kira" target="_blank" rel="noopener noreferrer" className="terminal-link">View on GitHub →</a>
-                <a href="https://www.usekiraapp.com/" target="_blank" rel="noopener noreferrer" className="terminal-link">Website →</a>
-              </div>
-            </div>
-
-            <div className="project-card">
-              <div className="flex flex-col mb-2">
-                <h3 className="project-title mb-1">Multimodal PA Pipeline</h3>
-                <div className="inline-flex items-center">
-                  <a href="https://www.mandolin.com/" target="_blank" rel="noopener noreferrer" className="text-[#58a6ff] text-sm hover:underline">Mandolin</a>
-                </div>
-              </div>
-              <p className="text-[#8b949e]">Automated workflow that OCRs medical referral packets, extracts structured data, and fills prior authorization PDFs.</p>
-              <div className="flex flex-wrap mt-2">
-                <span className="skill-tag">Python</span>
-                <span className="skill-tag">OCR</span>
-                <span className="skill-tag">NLP</span>
-                <span className="skill-tag">PyTorch</span>
-              </div>
-              <a href="https://github.com/mhashir03/Multimodal-PA-Pipeline" target="_blank" rel="noopener noreferrer" className="terminal-link block mt-2">View on GitHub →</a>
-            </div>
-
-          </div>
+            </article>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Projects; 
+export default Projects;

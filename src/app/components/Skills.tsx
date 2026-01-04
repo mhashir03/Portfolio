@@ -2,76 +2,84 @@ import React from 'react';
 
 const Skills = () => {
   return (
-    <div className="bento-item bento-skills">
-      <div className="terminal-header">
-        <span className="terminal-prompt">~</span>
-        <span className="ml-2 text-[#e6edf3]">Skills</span>
-      </div>
-      <div className="terminal-content">
-        <p>
-          <span className="terminal-prompt">$</span>
-          <span className="terminal-command"> ls -la ./skills/</span>
-        </p>
+    <section id="skills" className="section">
+      <div className="container">
+        <div className="section-header">
+          <p className="section-title">Skills</p>
+          <h2>Technologies I Use</h2>
+        </div>
         
-        <div className="terminal-output">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div>
-              <div className="text-[#e6edf3] font-bold mb-2">Languages:</div>
-              <div className="flex flex-wrap gap-1">
-                <span className="skill-tag">Python</span>
-                <span className="skill-tag">Java</span>
-                <span className="skill-tag">C/C++</span>
-                <span className="skill-tag">TypeScript</span>
-                <span className="skill-tag">JavaScript</span>
-                <span className="skill-tag">SQL</span>
-              </div>
+        <div className="bento-main">
+          {/* Box 1 - Languages (Hero) */}
+          <div className="bento-box box-1">
+            <span className="bento-eyebrow">Core Stack</span>
+            <h3 className="bento-heading">Languages</h3>
+            <div className="bento-chips">
+              <span>Python</span>
+              <span>Java</span>
+              <span>C/C++</span>
+              <span>TypeScript</span>
+              <span>JavaScript</span>
+              <span>SQL</span>
             </div>
+          </div>
 
-            <div>
-              <div className="text-[#e6edf3] font-bold mb-2">Frameworks:</div>
-              <div className="flex flex-wrap gap-1">
-                <span className="skill-tag">React.js</span>
-                <span className="skill-tag">Next.js</span>
-                <span className="skill-tag">React Native</span>
-                <span className="skill-tag">Expo</span>
-                <span className="skill-tag">Spring Boot</span>
-                <span className="skill-tag">Spring Data JPA</span>
-                <span className="skill-tag">Tailwind CSS</span>
-                <span className="skill-tag">LangChain</span>
-              </div>
+          {/* Box 2 - Years stat */}
+          <div className="bento-box box-2">
+            <span className="bento-stat-large">5+</span>
+            <span className="bento-stat-label">Years<br/>Coding</span>
+          </div>
+
+          {/* Box 3 - Frameworks */}
+          <div className="bento-box box-3">
+            <span className="bento-eyebrow-dark">Building Interfaces</span>
+            <h3 className="bento-heading-dark">Frameworks</h3>
+            <div className="bento-chips bento-chips-dark">
+              <span>React.js</span>
+              <span>Next.js</span>
+              <span>React Native</span>
+              <span>Spring Boot</span>
+              <span>Tailwind</span>
+              <span>LangChain</span>
             </div>
+          </div>
 
-            <div>
-              <div className="text-[#e6edf3] font-bold mb-2">Data &amp; ML:</div>
-              <div className="flex flex-wrap gap-1">
-                <span className="skill-tag">Pandas</span>
-                <span className="skill-tag">NumPy</span>
-                <span className="skill-tag">scikit-learn</span>
-                <span className="skill-tag">PyTorch</span>
-                <span className="skill-tag">OpenCV</span>
-                <span className="skill-tag">spaCy</span>
-                <span className="skill-tag">matplotlib</span>
-                <span className="skill-tag">seaborn</span>
-                <span className="skill-tag">BeautifulSoup</span>
-                <span className="skill-tag">joblib</span>
-              </div>
+          {/* Box 4 - Data & ML */}
+          <div className="bento-box box-4">
+            <span className="bento-eyebrow">Intelligence Layer</span>
+            <h3 className="bento-heading">Data & ML</h3>
+            <div className="bento-chips">
+              <span>Pandas</span>
+              <span>NumPy</span>
+              <span>scikit-learn</span>
+              <span>PyTorch</span>
+              <span>OpenCV</span>
+              <span>spaCy</span>
             </div>
+          </div>
 
-            <div>
-              <div className="text-[#e6edf3] font-bold mb-2">DevOps & Cloud:</div>
-              <div className="flex flex-wrap gap-1">
-                <span className="skill-tag">Docker</span>
-                <span className="skill-tag">AWS</span>
-                <span className="skill-tag">MongoDB</span>
-                <span className="skill-tag">Apache Kafka</span>
-                <span className="skill-tag">GitHub Actions (CI/CD)</span>
-              </div>
+          {/* Box 5 - Tools stat */}
+          <div className="bento-box box-5">
+            <span className="bento-stat-large">20+</span>
+            <span className="bento-stat-label">Tools<br/></span>
+          </div>
+
+          {/* Box 6 - DevOps */}
+          <div className="bento-box box-6">
+            <span className="bento-eyebrow">Infrastructure</span>
+            <h3 className="bento-heading">DevOps & Cloud</h3>
+            <div className="bento-chips">
+              <span>Docker</span>
+              <span>AWS</span>
+              <span>MongoDB</span>
+              <span>Kafka</span>
+              <span>CI/CD</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Skills; 
+export default Skills;

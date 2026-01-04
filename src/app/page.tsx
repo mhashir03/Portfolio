@@ -1,55 +1,21 @@
-'use client';
-
-import React, { useEffect } from 'react';
 import Header from './components/Header';
+import About from './components/About';
+import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Skills from './components/Skills';
-import Quotes from './components/Quotes';
-import About from './components/About';
-import Music from './components/Music';
-import Projects from './components/Projects';
 import Footer from './components/Footer';
 
 export default function Home() {
-  useEffect(() => {
-    // Import cycleQuotes function dynamically
-    import('./quotes').then(module => {
-      module.cycleQuotes();
-    });
-  }, []);
-
   return (
-    <div className="terminal-container">
-      {/* Header Section */}
+    <>
       <Header />
-
-      {/* Bento Grid Layout */}
-      <div className="bento-grid">
-        {/* About Me Section - First in line */}
-        <About />
-
-        {/* Music Section */}
-        <Music />
-
-        {/* Experience Section */}
-        <Experience />
-
-        {/* Education Section */}
-        <Education />
-
-        {/* Skills Section */}
-        <Skills />
-
-        {/* Matrix Digital Rain Section */}
-        <Quotes />
-
-        {/* Projects Section - Large Item */}
-        <Projects />
-      </div>
-
-      {/* Footer */}
+      <About />
+      <Skills />
+      <Experience />
+      <Projects />
+      <Education />  
       <Footer />
-    </div>
+    </>
   );
 }

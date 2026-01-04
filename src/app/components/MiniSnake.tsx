@@ -169,7 +169,7 @@ export default function MiniSnake() {
     const CELL = cellSizeRef.current;
 
     // Background
-    ctx.fillStyle = "#0d1117";
+    ctx.fillStyle = "#131316";
     ctx.fillRect(0, 0, GRID_COLS * CELL, GRID_ROWS * CELL);
 
     // Grid (subtle)
@@ -188,7 +188,7 @@ export default function MiniSnake() {
     }
 
     // Food
-    ctx.fillStyle = "#22c55e"; // emerald-500
+    ctx.fillStyle = "#c4a1e8"; // amethyst glow
     ctx.fillRect(
       foodRef.current.x * CELL + 1,
       foodRef.current.y * CELL + 1,
@@ -200,15 +200,15 @@ export default function MiniSnake() {
     const snake = snakeRef.current;
     snake.forEach((seg, i) => {
       const alpha = 1 - Math.min(i / 12, 0.6);
-      ctx.fillStyle = `rgba(59,130,246,${alpha})`; // blue-500 fade
+      ctx.fillStyle = `rgba(155,111,199,${alpha})`; // amethyst fade
       ctx.fillRect(seg.x * CELL + 1, seg.y * CELL + 1, CELL - 2, CELL - 2);
     });
 
     // Game over overlay
     if (gameOver) {
-      ctx.fillStyle = "rgba(13,17,23,0.7)";
+      ctx.fillStyle = "rgba(19,19,22,0.7)";
       ctx.fillRect(0, 0, GRID_COLS * CELL, GRID_ROWS * CELL);
-      ctx.fillStyle = "#e6edf3";
+      ctx.fillStyle = "#e5dfdc";
       ctx.font = "bold 12px ui-monospace, SFMono-Regular, Menlo, monospace";
       ctx.textAlign = "center";
       ctx.fillText("Game Over - Press Enter", (GRID_COLS * CELL) / 2, (GRID_ROWS * CELL) / 2);
@@ -225,12 +225,12 @@ export default function MiniSnake() {
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
     >
-      <div className="flex items-center justify-between mb-2 text-xs text-[#8b949e]">
+      <div className="flex items-center justify-between mb-2 text-xs text-[#b2b2bd]">
         <span>Snake</span>
         <div className="flex items-center gap-2">
           <span>Score: {score}</span>
           <button
-            className="px-2 py-0.5 rounded bg-[#1f2937] hover:bg-[#2d3748] text-[#e6edf3] transition"
+            className="px-2 py-0.5 rounded bg-[#212127] hover:bg-[#2a2a32] text-[#e5dfdc] transition"
             onClick={() => {
               if (running) {
                 setRunning(false);
@@ -246,17 +246,17 @@ export default function MiniSnake() {
             {running ? "Pause" : "Play"}
           </button>
           <button
-            className="px-2 py-0.5 rounded bg-[#1f2937] hover:bg-[#2d3748] text-[#e6edf3] transition"
+            className="px-2 py-0.5 rounded bg-[#212127] hover:bg-[#2a2a32] text-[#e5dfdc] transition"
             onClick={restart}
           >
             Restart
           </button>
         </div>
       </div>
-      <div className="rounded-md overflow-hidden border border-[#30363d] shadow-[0_0_20px_rgba(0,0,0,0.15)] bg-[#0b0f14]">
+      <div className="rounded-md overflow-hidden border border-[#3a3a42] shadow-[0_0_20px_rgba(0,0,0,0.15)] bg-[#131316]">
         <canvas ref={canvasRef} className="block mx-auto w-full" />
       </div>
-      <p className="mt-2 text-[10px] text-[#8b949e]">Use WASD or arrows. Space: pause, Enter: restart.</p>
+      <p className="mt-2 text-[10px] text-[#b2b2bd]">Use WASD or arrows. Space: pause, Enter: restart.</p>
     </div>
   );
 }

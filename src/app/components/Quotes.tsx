@@ -1,35 +1,48 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import { quotes } from '../quotes';
 
 const Quotes = () => {
+  const [currentQuote, setCurrentQuote] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      
+      setTimeout(() => {
+        setCurrentQuote((prev) => (prev + 1) % quotes.length);
+        setIsVisible(true);
+      }, 300);
+    }, 8000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const quote = quotes[currentQuote];
+
   return (
-    <div className="bento-item bento-quotes">
-      <div className="terminal-header">
-        <span className="terminal-prompt">~</span>
-        <span className="ml-2 text-[#e6edf3]">Quotes</span>
-      </div>
-      <div className="terminal-content">
-        <p className="mb-2">
-          <span className="terminal-prompt">$</span>
-          <span className="terminal-command"> ./wisdom.sh</span>
-        </p>
+    <section id="quotes" className="section">
+      <div className="container">
+        <div className="section-header">
+          <p className="section-title">Inspiration</p>
+          <h2>Words I Live By</h2>
+        </div>
         
-        <div className="terminal-output">
-          <div className="quote-container h-48 flex flex-col justify-center">
-            <div className="typing-quote mb-2 overflow-hidden whitespace-pre-wrap" style={{ minHeight: '6rem' }}>
-              <span className="text-[#e6edf3]">"Software is a great combination between artistry and engineering."</span>
-            </div>
-            <div className="quote-author text-right text-[#58a6ff] opacity-0 quote-author-animate">
-              — Bill Gates (Co-founder of Microsoft)
-            </div>
-            <div className="cursor-line mt-4 typing-text-delay-6 hidden">
-              <span className="terminal-prompt">$</span>
-              <span className="cursor-typing-blink"></span>
-            </div>
-          </div>
+        <div 
+          className="quote-container"
+          style={{
+            opacity: isVisible ? 1 : 0,
+            transition: 'opacity 0.3s ease',
+          }}
+        >
+          <p className="quote-text">"{quote.text}"</p>
+          <p className="quote-author">— {quote.author}</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Quotes; 
+export default Quotes;
