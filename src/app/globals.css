@@ -206,6 +206,154 @@ a:hover {
   max-width: 540px;
 }
 
+/* SLU Education Tooltip */
+.slu-trigger {
+  position: relative;
+  color: var(--color-accent);
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-accent-muted);
+  transition: all var(--transition-fast);
+}
+
+.slu-trigger:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+.education-tooltip {
+  position: absolute;
+  left: calc(100% + 16px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 280px;
+  padding: var(--space-lg);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  z-index: 100;
+  animation: tooltipFadeIn 0.2s ease-out;
+}
+
+.education-tooltip::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+  border-right-color: var(--color-border);
+}
+
+.education-tooltip::after {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right-color: var(--color-bg-card);
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+.education-tooltip-header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.education-tooltip-school {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.education-tooltip-meta {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.education-tooltip-degree {
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.education-tooltip-courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: var(--space-xs);
+}
+
+.education-tooltip-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: var(--color-bg-elevated);
+  color: var(--color-text-secondary);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  border-radius: 4px;
+  border: 1px solid var(--color-border-subtle);
+}
+
+/* Mobile: Position tooltip below instead of right */
+@media (max-width: 768px) {
+  .education-tooltip {
+    left: 50%;
+    top: calc(100% + 12px);
+    transform: translateX(-50%);
+    width: 260px;
+  }
+  
+  .education-tooltip::before {
+    left: 50%;
+    top: -8px;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-bottom-color: var(--color-border);
+    border-right-color: transparent;
+  }
+  
+  .education-tooltip::after {
+    left: 50%;
+    top: -6px;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-bottom-color: var(--color-bg-card);
+    border-right-color: transparent;
+  }
+  
+  @keyframes tooltipFadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+}
+
 /* ========================================
    BUTTONS
    ======================================== */
@@ -790,76 +938,45 @@ a:hover {
   padding: 0;
   font: inherit;
   cursor: pointer;
-  color: var(--color-accent);
   position: relative;
-  text-decoration: underline;
-  text-decoration-style: wavy;
-  text-underline-offset: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
   transition: all 0.2s ease;
 }
 
 .tennis-link {
-  text-decoration-color: var(--color-accent);
+  color: #4ade80;
 }
 
 .chess-link {
-  text-decoration-color: #b58863;
+  color: #d4a574;
 }
 
 .tennis-link::after {
   content: '🎾';
-  position: absolute;
-  right: -1.5em;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: 0.85em;
-  opacity: 0.7;
-  animation: tennisBounce 1.5s ease-in-out infinite;
+  transition: all 0.2s ease;
 }
 
 .chess-link::after {
-  content: '♟';
-  position: absolute;
-  right: -1.2em;
-  top: 50%;
-  transform: translateY(-50%);
+  content: '♟️';
   font-size: 0.9em;
-  opacity: 0.7;
-  animation: chessBounce 2s ease-in-out infinite;
-}
-
-.tennis-link:hover,
-.chess-link:hover {
-  color: var(--color-accent-hover);
+  transition: all 0.2s ease;
 }
 
 .tennis-link:hover {
-  text-decoration-color: var(--color-accent-hover);
+  color: #86efac;
 }
 
 .chess-link:hover {
-  text-decoration-color: #d4a574;
+  color: #e8c9a4;
 }
 
-.tennis-link:hover::after {
-  opacity: 1;
-  animation: tennisBounce 0.5s ease-in-out infinite;
-}
-
+.tennis-link:hover::after,
 .chess-link:hover::after {
   opacity: 1;
-  animation: chessBounce 0.8s ease-in-out infinite;
-}
-
-@keyframes tennisBounce {
-  0%, 100% { transform: translateY(-50%) translateX(0); }
-  50% { transform: translateY(-50%) translateX(3px); }
-}
-
-@keyframes chessBounce {
-  0%, 100% { transform: translateY(-50%) rotate(0deg); }
-  25% { transform: translateY(-50%) rotate(-5deg); }
-  75% { transform: translateY(-50%) rotate(5deg); }
+  transform: scale(1.15);
 }
 
 /* Mini Chess Game */
@@ -869,6 +986,102 @@ a:hover {
   border: 1px solid var(--color-border);
   border-radius: 12px;
   width: fit-content;
+}
+
+/* ========================================
+   GAME BUTTONS - Clean & Subtle
+   ======================================== */
+
+.game-btn {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.game-btn-primary {
+  background: var(--color-text-primary);
+  color: var(--color-bg);
+  border-color: var(--color-text-primary);
+}
+
+.game-btn-primary:hover {
+  background: transparent;
+  color: var(--color-text-primary);
+}
+
+.game-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.game-btn-small {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.game-btn-small:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-text-muted);
+}
+
+/* Chess color selection buttons */
+.chess-color-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid;
+}
+
+.chess-color-btn-white {
+  background: #f8f8f8;
+  border-color: var(--color-border);
+}
+
+.chess-color-btn-white:hover {
+  background: #fff;
+  border-color: var(--color-text-muted);
+}
+
+.chess-color-btn-white .chess-color-btn-label {
+  color: #374151;
+}
+
+.chess-color-btn-black {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+.chess-color-btn-black:hover {
+  background: #111827;
+  border-color: var(--color-text-muted);
+}
+
+.chess-color-btn-black .chess-color-btn-label {
+  color: #d1d5db;
+}
+
+.chess-color-btn-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.chess-color-btn:active {
+  transform: scale(0.98);
 }
 
 .interests {
@@ -897,38 +1110,199 @@ a:hover {
   transform: translateY(-2px);
 }
 
+/* Interactive Cards - Music & Quotes */
+.interactive-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+@media (min-width: 480px) {
+  .interactive-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.interactive-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: left;
+  min-width: 240px;
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.interactive-card:hover::before {
+  opacity: 1;
+}
+
+.interactive-card.active {
+  transform: translateY(-2px);
+}
+
+/* Music Card Specific */
+.music-card {
+  border-color: rgba(29, 185, 84, 0.3);
+}
+
+.music-card::before {
+  background: linear-gradient(135deg, rgba(29, 185, 84, 0.08) 0%, transparent 60%);
+}
+
+.music-card:hover {
+  border-color: rgba(29, 185, 84, 0.6);
+}
+
+.music-card.active {
+  border-color: var(--color-spotify);
+  box-shadow: 0 0 20px rgba(29, 185, 84, 0.2);
+}
+
+.music-card .interactive-card-cta {
+  color: var(--color-spotify);
+}
+
+/* Quotes Card Specific */
+.quotes-card {
+  border-color: rgba(155, 111, 199, 0.3);
+}
+
+.quotes-card::before {
+  background: linear-gradient(135deg, rgba(155, 111, 199, 0.08) 0%, transparent 60%);
+}
+
+.quotes-card:hover {
+  border-color: rgba(155, 111, 199, 0.6);
+}
+
+.quotes-card.active {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(155, 111, 199, 0.2);
+}
+
+.quotes-card .interactive-card-cta {
+  color: var(--color-accent);
+}
+
+/* Card Inner Elements */
+.interactive-card-icon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.interactive-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.interactive-card-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.interactive-card-cta {
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.interactive-card:hover .interactive-card-cta {
+  letter-spacing: 0.02em;
+}
+
 /* ========================================
-   QUOTES EASTER EGG
+   CLOSE BUTTONS - Interactive
    ======================================== */
 
-.quote-easter-egg {
-  opacity: 0.4;
-  transition: all 0.3s ease;
-  width: 36px !important;
-  min-width: 36px !important;
-  padding: 0 !important;
-  justify-content: center !important;
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-bg-elevated);
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
 }
 
-.quote-easter-egg:hover {
-  opacity: 1;
-  transform: scale(1.1);
+.close-btn-icon {
+  font-size: 13px;
+  transition: transform 0.2s ease;
 }
 
-.quote-easter-egg .quote-icon {
-  font-size: 1rem;
-  transition: transform 0.3s ease;
+.close-btn-tooltip {
+  display: none;
 }
 
-.quote-easter-egg:hover .quote-icon {
-  animation: wiggle 0.5s ease-in-out;
+.close-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-10deg); }
-  75% { transform: rotate(10deg); }
+.close-btn:hover .close-btn-icon {
+  transform: rotate(45deg);
 }
+
+.close-btn:active {
+  transform: scale(0.95);
+}
+
+/* Color variants */
+.close-btn-purple:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-muted);
+  color: var(--color-accent);
+}
+
+.close-btn-spotify:hover {
+  border-color: var(--color-spotify);
+  background: rgba(29, 185, 84, 0.15);
+  color: var(--color-spotify);
+}
+
+.close-btn-green:hover {
+  border-color: #4ade80;
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+}
+
+/* ========================================
+   QUOTES SECTION
+   ======================================== */
 
 .quote-easter-egg-reveal {
   margin-top: var(--space-lg);

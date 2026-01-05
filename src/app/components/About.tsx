@@ -80,22 +80,27 @@ const About = () => {
               .
             </p>
             
-            <div className="interests">
+            <div className="interactive-cards">
               <button
                 onClick={() => togglePanel('music')}
-                className={`interest-link transition-all ${rightPanel === 'music' ? 'ring-2 ring-[--color-spotify] ring-offset-2 ring-offset-[--color-bg]' : ''}`}
-                title="See what I'm listening to"
+                className={`interactive-card music-card ${rightPanel === 'music' ? 'active' : ''}`}
               >
-                <span>🎵</span>
-                <span>Music</span>
+                <span className="interactive-card-icon">🎧</span>
+                <span className="interactive-card-content">
+                  <span className="interactive-card-label">Now Playing</span>
+                  <span className="interactive-card-cta">See what I'm listening to →</span>
+                </span>
               </button>
-              {/* Hidden quote easter egg */}
+              
               <button
                 onClick={handleQuoteClick}
-                className="interest-link quote-easter-egg transition-all"
-                title={showQuote ? "Click for another quote" : "✨"}
+                className={`interactive-card quotes-card ${showQuote ? 'active' : ''}`}
               >
-                <span className="quote-icon">💭</span>
+                <span className="interactive-card-icon">💭</span>
+                <span className="interactive-card-content">
+                  <span className="interactive-card-label">Words I Live By</span>
+                  <span className="interactive-card-cta">{showQuote ? 'Click for another →' : 'Discover my favorite quotes →'}</span>
+                </span>
               </button>
             </div>
 
@@ -124,38 +129,37 @@ const About = () => {
               }}
             >
               {rightPanel === 'tennis' && (
-                <div className="relative overflow-visible">
+                <div className="relative overflow-visible pt-10 pr-10">
                   <button
                     onClick={() => setRightPanel('none')}
-                    className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-[--color-bg] border border-[--color-border] text-[--color-text-muted] hover:text-[--color-text-primary] hover:border-[--color-text-muted] transition-colors flex items-center justify-center text-sm z-20 shadow-lg"
+                    className="close-btn close-btn-green"
                     aria-label="Close panel"
                   >
-                    ✕
+                    <span className="close-btn-icon">✕</span>
                   </button>
                   <TennisGame />
                 </div>
               )}
               {rightPanel === 'chess' && (
-                <div className="relative overflow-visible">
+                <div className="relative overflow-visible pt-10 pr-10">
                   <button
                     onClick={() => setRightPanel('none')}
-                    className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-[--color-bg] border border-[--color-border] text-[--color-text-muted] hover:text-[--color-text-primary] hover:border-[--color-text-muted] transition-colors flex items-center justify-center text-sm z-20 shadow-lg"
+                    className="close-btn close-btn-purple"
                     aria-label="Close panel"
                   >
-                    ✕
+                    <span className="close-btn-icon">✕</span>
                   </button>
                   <MiniChess />
                 </div>
               )}
               {rightPanel === 'music' && (
-                <div className="relative overflow-visible">
+                <div className="relative overflow-visible pt-10 pr-10">
                   <button
                     onClick={() => setRightPanel('none')}
-                    className="absolute -top-3 -right-3 w-7 h-7 rounded-full bg-[--color-bg] border border-[--color-border] text-[--color-text-muted] hover:text-[--color-text-primary] hover:border-[--color-text-muted] transition-colors flex items-center justify-center text-sm z-20 shadow-lg"
-                    style={{ top: '-42px', right: '-42px' }}
+                    className="close-btn close-btn-spotify"
                     aria-label="Close panel"
                   >
-                    ✕
+                    <span className="close-btn-icon">✕</span>
                   </button>
                   <div className="p-4 rounded-xl bg-[--color-bg-card] border border-[--color-border]">
                     <SpotifyNowPlaying />

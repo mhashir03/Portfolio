@@ -516,21 +516,21 @@ const MiniChess: React.FC = () => {
           <div className="flex gap-3 justify-center">
             <button
               onClick={() => startGame('w')}
-              className="flex flex-col items-center gap-2 px-4 py-3 rounded-lg bg-white border-2 border-gray-300 hover:border-[--color-accent] transition-colors group"
+              className="chess-color-btn chess-color-btn-white"
             >
               <div className="w-10 h-10 flex items-center justify-center">
                 <PieceSVG type="k" color="w" />
               </div>
-              <span className="text-xs font-medium text-gray-700 group-hover:text-[--color-accent]">White</span>
+              <span className="chess-color-btn-label">White</span>
             </button>
             <button
               onClick={() => startGame('b')}
-              className="flex flex-col items-center gap-2 px-4 py-3 rounded-lg bg-gray-800 border-2 border-gray-600 hover:border-[--color-accent] transition-colors group"
+              className="chess-color-btn chess-color-btn-black"
             >
               <div className="w-10 h-10 flex items-center justify-center">
                 <PieceSVG type="k" color="b" />
               </div>
-              <span className="text-xs font-medium text-gray-200 group-hover:text-[--color-accent]">Black</span>
+              <span className="chess-color-btn-label">Black</span>
             </button>
           </div>
         </div>
@@ -546,13 +546,13 @@ const MiniChess: React.FC = () => {
         </h3>
         <button
           onClick={resetGame}
-          className="text-xs px-2 py-1 rounded bg-[--color-bg-elevated] border border-[--color-border] text-[--color-text-muted] hover:text-[--color-text-primary] hover:border-[--color-text-muted] transition-colors"
+          className="game-btn-small"
         >
           New Game
         </button>
       </div>
       
-      <div className="grid grid-cols-8 gap-0 border-2 border-[#8b7355] rounded overflow-hidden shadow-lg" style={{ width: 'fit-content' }}>
+      <div className="grid grid-cols-8 gap-0 border border-[--color-border] rounded overflow-hidden" style={{ width: 'fit-content' }}>
         {renderBoard()}
       </div>
       
@@ -563,7 +563,7 @@ const MiniChess: React.FC = () => {
         {game.isGameOver() && (
           <button
             onClick={resetGame}
-            className="mt-2 text-xs px-3 py-1 rounded-full bg-[--color-accent] text-white hover:opacity-90 transition-opacity"
+            className="game-btn game-btn-primary mt-3"
           >
             Play Again
           </button>

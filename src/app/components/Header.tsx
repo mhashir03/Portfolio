@@ -1,15 +1,49 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+
+const courses = [
+  'Data Structures',
+  'Algorithms',
+  'Databases',
+  'Operating Systems',
+  'Distributed Computing',
+  'Software Engineering',
+  'Object-Oriented Programming',
+];
 
 const Header = () => {
+  const [showEducation, setShowEducation] = useState(false);
+
   return (
     <header className="hero">
       <div className="container">
         <div className="hero-content animate-fade-in-up">
           <h1 className="hero-name">hashir</h1>
           <p className="hero-description">
-            full stack developer. cs @ slu. open to full-time roles in the US.
+            full stack developer. cs @{' '}
+            <span 
+              className="slu-trigger"
+              onMouseEnter={() => setShowEducation(true)}
+              onMouseLeave={() => setShowEducation(false)}
+            >
+              slu
+              {showEducation && (
+                <span className="education-tooltip">
+                  <span className="education-tooltip-header">
+                    <span className="education-tooltip-school">Saint Louis University</span>
+                    <span className="education-tooltip-meta">St. Louis, MO</span>
+                  </span>
+                  <span className="education-tooltip-degree">B.S. Computer Science · May 2026</span>
+                  <span className="education-tooltip-courses">
+                    {courses.map((course) => (
+                      <span key={course} className="education-tooltip-tag">{course}</span>
+                    ))}
+                  </span>
+                </span>
+              )}
+            </span>
+            . open to full-time roles in the US.
           </p>
           
           {/* Social Links */}

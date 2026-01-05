@@ -556,12 +556,7 @@ const TennisGame: React.FC = () => {
           >
             <button
               onClick={startGame}
-              className="px-8 py-3 rounded-full text-lg font-bold transition-all hover:scale-105 active:scale-95"
-              style={{
-                backgroundColor: '#9b6fc7',
-                color: '#131316',
-                boxShadow: '0 4px 15px rgba(155, 111, 199, 0.4)',
-              }}
+              className="game-btn game-btn-primary"
             >
               Play
             </button>
@@ -581,19 +576,14 @@ const TennisGame: React.FC = () => {
             style={{ backgroundColor: 'rgba(19, 19, 22, 0.9)' }}
           >
             <p 
-              className="text-2xl font-bold mb-6"
-              style={{ color: '#9b6fc7' }}
+              className="text-2xl font-semibold mb-6"
+              style={{ color: '#e5dfdc' }}
             >
               {gameMessage}
             </p>
             <button
               onClick={resetGame}
-              className="px-6 py-2 rounded-full text-base font-bold transition-all hover:scale-105 active:scale-95"
-              style={{
-                backgroundColor: '#9b6fc7',
-                color: '#131316',
-                boxShadow: '0 4px 15px rgba(155, 111, 199, 0.4)',
-              }}
+              className="game-btn game-btn-primary"
             >
               Play Again
             </button>
