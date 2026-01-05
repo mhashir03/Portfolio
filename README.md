@@ -1,71 +1,51 @@
-# Hashir's Personal Portfolio
+# Hashir's Portfolio
 
-This is my personal portfolio website with a terminal/code-inspired aesthetic built using Next.js and Tailwind CSS. 
+My personal portfolio website built with Next.js 15 and Tailwind CSS.
 
-## Overview
+**Live:** [hashir.fyi](https://www.hashir.fyi)
 
-I created this portfolio to showcase my skills and projects in a unique way that reflects my passion for coding. The terminal theme represents my comfort with command-line interfaces and technical environments.
+## Features
 
-https://www.hashir.fyi
+- **Interactive Easter Eggs** - Play chess against me (~1200 ELO AI), try the tennis game, and discover hidden quotes
+- **Spotify Integration** - Real-time display of what I'm currently listening to
+- **Mini Games** - Built-in chess and tennis games with full game logic
+- **Responsive Design** - Fully responsive across all devices
 
-## Technical Implementation
-
-- **Custom Terminal Emulator**: Built from scratch with React hooks for state management
-- **Spotify API Integration**: Real-time display of currently playing tracks using Spotify Web API
-- **Performance Optimized**: Achieves 98+ Lighthouse performance score
-- **Type-Safe Codebase**: Fully typed with TypeScript for robust error prevention
-- **Responsive Design System**: Fluid layout using CSS Grid and Flexbox with Tailwind CSS
-- **Server-Side Rendering**: Utilizes Next.js SSR for optimal loading performance
-
-## Core Technologies
+## Tech Stack
 
 - Next.js 15 (React 19)
 - TypeScript
-- JavaScript
 - Tailwind CSS
-- Vercel Edge Functions
+- chess.js (for chess game logic)
 - Spotify Web API
+- Vercel
+
+## Easter Eggs 🥚
+
+- Click **"chess"** in the About section to play against my AI
+- Click **"tennis court"** to play a mini tennis game
+- Find the 💭 button for rotating developer quotes
 
 ## Development
 
-### Prerequisites
-
-- Node.js 16.0.0+
-- npm or yarn
-- Spotify Developer Account (for API access)
-
-### Quick Start
-
 ```bash
-# Clone repository
-git clone https://github.com/mhashir03/portfolio.git
+# Clone
+git clone https://github.com/mhashir03/Portfolio.git
 
-# Install dependencies
+# Install
 npm install
 
-# Configure environment
+# Setup environment
 cp .env.example .env.local
-# Add your Spotify API credentials to .env.local:
-# SPOTIFY_CLIENT_ID=your_client_id
-# SPOTIFY_CLIENT_SECRET=your_client_secret
-# SPOTIFY_REFRESH_TOKEN=your_refresh_token
+# Add Spotify credentials
 
-# Run development server
+# Run
 npm run dev
 ```
 
-Visit `http://localhost:3000` to view the application.
-
-## Performance Metrics
-
-- **Lighthouse Score**: 98/100 (Performance)
-- **First Contentful Paint**: ~0.6s
-- **TTI**: ~1.2s
-- **Bundle Size**: <100KB gzipped
-
 ## License
 
-This project is my personal portfolio. While the code is publicly available for inspiration, please don't create direct copies. Create something unique that represents your own skills and personality!
+Personal portfolio - feel free to draw inspiration, but please create something unique to you!
 
 ---
 
