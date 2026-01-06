@@ -26,7 +26,7 @@ const Skills = () => {
 
           {/* Box 2 - Years stat */}
           <div className="bento-box box-2">
-            <span className="bento-stat-large">5+</span>
+            <span className="bento-stat-large">3+</span>
             <span className="bento-stat-label">Years<br/>Coding</span>
           </div>
 

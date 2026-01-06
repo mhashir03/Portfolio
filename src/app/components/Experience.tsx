@@ -2,14 +2,6 @@ import React from 'react';
 
 const experiences = [
   {
-    color: '#9b6fc7',
-    company: 'Open Politic',
-    role: 'Co-Founder',
-    timeframe: 'Oct – Dec 2025',
-    location: 'St. Louis, MO',
-    summary: 'Built a full-stack U.S. policy search platform with Next.js and Spring Boot.',
-  },
-  {
     color: '#29143e',
     company: "Where's Religion?",
     role: 'Software Engineer',
@@ -28,9 +20,9 @@ const experiences = [
   {
     color: '#c4a1e8',
     company: 'Headstarter',
-    role: 'Software Engineer Intern',
+    role: 'Software Engineer Fellow',
     timeframe: 'Jun – Aug 2025',
-    location: 'Long Island, NY',
+    location: 'Remote',
     summaryJsx: (
       <>
         Built ML pipelines with Computer Vision and OCR for{' '}
@@ -45,7 +37,7 @@ const experiences = [
     company: 'GEEZ Creationz',
     role: 'Software Engineer Intern',
     timeframe: 'Jun – Aug 2023',
-    location: 'St. Louis, MO',
+    location: 'Remote',
     summary: 'Launched the company website with React to drive client acquisition.',
   },
 ];
