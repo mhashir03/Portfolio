@@ -2,7 +2,6 @@ import React from 'react';
 
 const experiences = [
   {
-    color: '#29143e',
     company: "Where's Religion?",
     role: 'Software Engineer',
     timeframe: 'Aug – Dec 2025',
@@ -10,7 +9,6 @@ const experiences = [
     summary: 'Developed cross-platform features with React Native and TypeScript on AWS.',
   },
   {
-    color: '#7a7a85',
     company: 'Saint Louis University',
     role: 'Teaching Assistant · Operating Systems',
     timeframe: 'Aug – Dec 2025',
@@ -18,7 +16,6 @@ const experiences = [
     summary: 'Held office hours and grading assignments in C.',
   },
   {
-    color: '#c4a1e8',
     company: 'Headstarter',
     role: 'Software Engineer Fellow',
     timeframe: 'Jun – Aug 2025',
@@ -33,7 +30,6 @@ const experiences = [
     ),
   },
   {
-    color: '#e5dfdc',
     company: 'GEEZ Creationz',
     role: 'Software Engineer Intern',
     timeframe: 'Jun – Aug 2023',
@@ -57,13 +53,7 @@ const Experience = () => {
               <div className="timeline-date">{exp.timeframe}</div>
               
               <div className="timeline-content">
-                <h3 className="timeline-company">
-                  <span 
-                    className="timeline-dot" 
-                    style={{ backgroundColor: exp.color }}
-                  />
-                  {exp.company}
-                </h3>
+                <h3 className="timeline-company">{exp.company}</h3>
                 <p className="timeline-role">{exp.role}</p>
                 <p className="timeline-location">{exp.location}</p>
                 <p className="timeline-summary">

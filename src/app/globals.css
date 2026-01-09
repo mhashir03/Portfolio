@@ -17,20 +17,20 @@
   --color-text-secondary: #b2b2bd;
   --color-text-muted: #7a7a85;
   
-  /* Accent - Dark Amethyst */
-  --color-accent: #9b6fc7;
-  --color-accent-muted: #29143e;
-  --color-accent-subtle: rgba(41, 20, 62, 0.3);
-  --color-accent-glow: #c4a1e8;
+  /* Accent - Saffron */
+  --color-accent: #E3B505;
+  --color-accent-muted: #3d3209;
+  --color-accent-subtle: rgba(227, 181, 5, 0.1);
+  --color-accent-hover: #f5c518;
   
   /* Status Colors */
-  --color-success: #9b6fc7;
+  --color-success: #E3B505;
   --color-spotify: #1DB954;
 }
 
 :root {
-  --font-heading: var(--font-poppins), system-ui, sans-serif;
-  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-jakarta), system-ui, sans-serif;
+  --font-body: var(--font-jakarta), system-ui, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', Menlo, Monaco, monospace;
   
   /* Spacing Scale */
@@ -83,7 +83,7 @@ body {
 }
 
 /* ========================================
-   TYPOGRAPHY
+   TYPOGRAPHY - Inter Scale
    ======================================== */
 
 h1, h2, h3, h4, h5, h6 {
@@ -95,23 +95,48 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-size: 2.986rem;
   font-weight: 700;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-size: 2.488rem;
   font-weight: 600;
 }
 
 h3 {
-  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-size: 2.074rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.728rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.44rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
 p {
+  font-size: 1rem;
   color: var(--color-text-secondary);
 }
+
+small, .text-small {
+  font-size: 0.833rem;
+}
+
+.text-xs {
+  font-size: 0.694rem;
+}
+
 
 a {
   color: var(--color-text-primary);
@@ -233,7 +258,6 @@ a:hover {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
@@ -382,7 +406,6 @@ a:hover {
 .btn-primary:hover {
   background-color: var(--color-accent);
   color: var(--color-bg);
-  transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -394,7 +417,6 @@ a:hover {
 .btn-secondary:hover {
   border-color: var(--color-accent);
   color: var(--color-accent);
-  transform: translateY(-2px);
 }
 
 .btn-group {
@@ -418,10 +440,8 @@ a:hover {
 }
 
 .social-icon:hover {
-  background-color: var(--color-accent);
   border-color: var(--color-accent);
-  color: var(--color-bg);
-  transform: translateY(-2px);
+  color: var(--color-accent);
 }
 
 /* ========================================
@@ -497,7 +517,7 @@ a:hover {
   align-items: center;
   gap: var(--space-xs);
   padding: var(--space-xs) var(--space-sm);
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-glow) 100%);
+  background: var(--color-accent);
   color: var(--color-bg);
   font-size: 0.6875rem;
   font-weight: 700;
@@ -550,6 +570,84 @@ a:hover {
 
 .project-link:hover {
   color: var(--color-accent);
+}
+
+/* Projects Expand Section */
+.projects-expand-container {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+
+.projects-expand-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--color-border-subtle);
+  z-index: 0;
+}
+
+.projects-expand-btn {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-xl);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-expand-btn:hover {
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.projects-expand-icon {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-expand-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Expandable Projects Container */
+.projects-expandable {
+  display: none;
+  padding-top: var(--space-xl);
+}
+
+.projects-expandable.expanded {
+  display: block;
+}
+
+/* Project Card Animations - GPU accelerated */
+.projects-expandable .project-card {
+  opacity: 0;
+  transform: translateY(12px);
+  will-change: opacity, transform;
+}
+
+.projects-expandable.expanded .project-card {
+  animation: projectReveal 0.25s ease-out forwards;
+}
+
+@keyframes projectReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ========================================
@@ -711,18 +809,17 @@ a:hover {
 
 .bento-box {
   padding: 1.5rem;
-  border-radius: 20px;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   overflow: hidden;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--color-border-subtle);
+  transition: border-color 0.2s ease;
 }
 
 .bento-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+  border-color: var(--color-border);
 }
 
 /* Box assignments */
@@ -733,16 +830,16 @@ a:hover {
 .box-5 { grid-area: box-5; }
 .box-6 { grid-area: box-6; }
 
-/* Box 1 - Languages (Hero purple) */
+/* Box 1 - Languages (Saffron accent) */
 .box-1 {
-  background: linear-gradient(145deg, #5046e5 0%, #7c3aed 60%, #8b5cf6 100%);
-  color: white;
+  background: #E3B505;
+  color: #131316;
 }
 
-/* Box 2 - Years stat (Dark navy) */
+/* Box 2 - Years stat (Dark) */
 .box-2 {
-  background: linear-gradient(160deg, #0c1929 0%, #1a2942 100%);
-  color: white;
+  background: var(--color-bg-card);
+  color: var(--color-text-primary);
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -750,29 +847,29 @@ a:hover {
 
 /* Box 3 - Frameworks (Light) */
 .box-3 {
-  background: linear-gradient(160deg, #f1f0fb 0%, #faf9fe 100%);
-  color: #1e1b4b;
+  background: #f5f5f4;
+  color: #1c1917;
 }
 
-/* Box 4 - Data & ML (Blue) */
+/* Box 4 - Data & ML (Dark warm) */
 .box-4 {
-  background: linear-gradient(145deg, #1d4ed8 0%, #3b82f6 100%);
-  color: white;
+  background: #292524;
+  color: var(--color-text-primary);
 }
 
-/* Box 5 - Tools stat (Accent purple) */
+/* Box 5 - Tools stat (Saffron muted) */
 .box-5 {
-  background: linear-gradient(145deg, #9333ea 0%, #a855f7 100%);
-  color: white;
+  background: #3d3209;
+  color: #E3B505;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-/* Box 6 - DevOps (Dark slate) */
+/* Box 6 - DevOps (Dark) */
 .box-6 {
-  background: linear-gradient(160deg, #0f172a 0%, #1e293b 100%);
-  color: white;
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
 }
 
 /* Tablet: 2-column staggered layout */
@@ -842,7 +939,7 @@ a:hover {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: #6366f1;
+  color: #78716c;
   margin-bottom: 0.5rem;
 }
 
@@ -858,7 +955,7 @@ a:hover {
 .bento-heading-dark {
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   font-weight: 700;
-  color: #1e1b4b;
+  color: #1c1917;
   margin-bottom: 1rem;
   letter-spacing: -0.03em;
   line-height: 1;
@@ -891,28 +988,26 @@ a:hover {
 }
 
 .bento-chips span {
-  padding: 7px 14px;
-  background: rgba(255, 255, 255, 0.18);
-  border-radius: 100px;
-  font-size: 0.85rem;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  font-size: 0.833rem;
   font-weight: 500;
-  backdrop-filter: blur(8px);
-  transition: all 0.2s ease;
+  transition: background 0.15s ease;
   white-space: nowrap;
 }
 
 .bento-chips span:hover {
-  background: rgba(255, 255, 255, 0.32);
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .bento-chips-dark span {
-  background: rgba(99, 102, 241, 0.12);
-  color: #4338ca;
+  background: rgba(28, 25, 23, 0.08);
+  color: #44403c;
 }
 
 .bento-chips-dark span:hover {
-  background: rgba(99, 102, 241, 0.22);
+  background: rgba(28, 25, 23, 0.15);
 }
 
 /* ========================================
@@ -1104,10 +1199,8 @@ a:hover {
 }
 
 .interest-link:hover {
-  background-color: var(--color-accent-subtle);
-  border-color: var(--color-accent-muted);
-  color: var(--color-accent);
-  transform: translateY(-2px);
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
 }
 
 /* Interactive Cards - Music & Quotes */
@@ -1150,8 +1243,7 @@ a:hover {
 }
 
 .interactive-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  border-color: var(--color-border);
 }
 
 .interactive-card:hover::before {
@@ -1168,7 +1260,7 @@ a:hover {
 }
 
 .music-card::before {
-  background: linear-gradient(135deg, rgba(29, 185, 84, 0.08) 0%, transparent 60%);
+  background: rgba(29, 185, 84, 0.05);
 }
 
 .music-card:hover {
@@ -1177,7 +1269,6 @@ a:hover {
 
 .music-card.active {
   border-color: var(--color-spotify);
-  box-shadow: 0 0 20px rgba(29, 185, 84, 0.2);
 }
 
 .music-card .interactive-card-cta {
@@ -1186,20 +1277,19 @@ a:hover {
 
 /* Quotes Card Specific */
 .quotes-card {
-  border-color: rgba(155, 111, 199, 0.3);
+  border-color: rgba(227, 181, 5, 0.2);
 }
 
 .quotes-card::before {
-  background: linear-gradient(135deg, rgba(155, 111, 199, 0.08) 0%, transparent 60%);
+  background: rgba(227, 181, 5, 0.05);
 }
 
 .quotes-card:hover {
-  border-color: rgba(155, 111, 199, 0.6);
+  border-color: rgba(227, 181, 5, 0.4);
 }
 
 .quotes-card.active {
   border-color: var(--color-accent);
-  box-shadow: 0 0 20px rgba(155, 111, 199, 0.2);
 }
 
 .quotes-card .interactive-card-cta {
@@ -1248,15 +1338,14 @@ a:hover {
   height: 32px;
   border-radius: 50%;
   background: var(--color-bg-elevated);
-  border: 1.5px solid var(--color-border);
+  border: 1px solid var(--color-border);
   color: var(--color-text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 20;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 
 .close-btn-icon {
@@ -1269,8 +1358,8 @@ a:hover {
 }
 
 .close-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: var(--color-text-muted);
+  color: var(--color-text-primary);
 }
 
 .close-btn:hover .close-btn-icon {
@@ -1284,7 +1373,7 @@ a:hover {
 /* Color variants */
 .close-btn-purple:hover {
   border-color: var(--color-accent);
-  background: var(--color-accent-muted);
+  background: var(--color-accent-subtle);
   color: var(--color-accent);
 }
 
@@ -1307,7 +1396,7 @@ a:hover {
 .quote-easter-egg-reveal {
   margin-top: var(--space-lg);
   padding: var(--space-md) var(--space-lg);
-  background: linear-gradient(135deg, var(--color-bg-card) 0%, transparent 100%);
+  background: var(--color-bg-card);
   border-left: 2px solid var(--color-accent);
   border-radius: 0 8px 8px 0;
   animation: quoteSlideIn 0.3s ease-out;

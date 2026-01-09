@@ -74,6 +74,8 @@ const Skills = () => {
               <span>MongoDB</span>
               <span>Kafka</span>
               <span>CI/CD</span>
+              <span>Git</span>
+              <span>Trello</span>
             </div>
           </div>
         </div>
