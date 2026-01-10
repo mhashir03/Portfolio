@@ -17,7 +17,7 @@ const projects = [
   {
     title: 'Kira',
     badge: '⭐ Featured',
-    badgeContext: 'Google DevFest 2025',
+    badgeContext: 'Google DevFest WashU 2025',
     description: 'Web app helping users understand symptoms and assess potential health concerns.',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     github: 'https://github.com/mhashir03/Kira',
@@ -28,6 +28,7 @@ const projects = [
   {
     title: 'Midas Core',
     company: 'JPMorgan Chase',
+    companyUrl: 'https://www.jpmorganchase.com/',
     description: 'Real-time transaction processing system using Spring Boot and Apache Kafka with validation, database audit trails, and REST APIs.',
     tech: ['Java', 'Spring Boot', 'Kafka', 'JPA', 'REST'],
     github: 'https://github.com/mhashir03/Midas-Core',

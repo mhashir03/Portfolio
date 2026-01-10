@@ -540,10 +540,7 @@ const MiniChess: React.FC = () => {
 
   return (
     <div className="mini-chess-container">
-      <div className="flex items-center justify-between mb-3">
-        <h3 className="text-sm font-semibold text-[--color-text-primary]">
-          ♟️ vs Hashir
-        </h3>
+      <div className="flex items-center justify-center mb-3">
         <button
           onClick={resetGame}
           className="game-btn-small"
