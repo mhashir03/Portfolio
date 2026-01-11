@@ -71,7 +71,7 @@ const Header = () => {
               </svg>
             </a>
             <a 
-              href="mailto:hashirmuhammad03@gmail.com"
+              href="mailto:mhashir0318@gmail.com"
               className="social-icon"
               aria-label="Email"
             >
