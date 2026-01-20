@@ -2,23 +2,30 @@ import React from 'react';
 
 const experiences = [
   {
+    company: "TheHealthApp",
+    role: 'Software Engineer',
+    timeframe: 'Spring 2026',
+    location: 'St. Louis, MO',
+    summary: 'Building a health platform with ML-powered assessments for patients.',
+  },
+  {
     company: "Where's Religion?",
     role: 'Software Engineer',
-    timeframe: 'Aug – Dec 2025',
+    timeframe: 'Fall 2025',
     location: 'St. Louis, MO',
     summary: 'Developed cross-platform features with React Native and TypeScript on AWS.',
   },
   {
     company: 'Saint Louis University',
     role: 'Teaching Assistant · Operating Systems',
-    timeframe: 'Aug – Dec 2025',
+    timeframe: 'Fall 2025',
     location: 'St. Louis, MO',
     summary: 'Held office hours and grading assignments in C.',
   },
   {
     company: 'Headstarter',
     role: 'Software Engineer Fellow',
-    timeframe: 'Jun – Aug 2025',
+    timeframe: 'Summer 2025',
     location: 'Remote',
     summaryJsx: (
       <>
@@ -32,7 +39,7 @@ const experiences = [
   {
     company: 'GEEZ Creationz',
     role: 'Software Engineer Intern',
-    timeframe: 'Jun – Aug 2023',
+    timeframe: 'Summer 2023',
     location: 'Remote',
     summary: 'Launched the company website with React to drive client acquisition.',
   },

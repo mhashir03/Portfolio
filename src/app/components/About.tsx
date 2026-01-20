@@ -1,40 +1,24 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import TennisGame from './TennisGame';
 import MiniChess from './MiniChess';
 import SpotifyNowPlaying from './Spotify';
+import LocationCard from './LocationCard';
 import { quotes } from '../quotes';
 
-type RightPanel = 'none' | 'tennis' | 'music' | 'chess';
+type RightPanel = 'none' | 'music' | 'chess';
 
 const About = () => {
   const [rightPanel, setRightPanel] = useState<RightPanel>('none');
-  const [showQuote, setShowQuote] = useState(false);
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
   const [quoteVisible, setQuoteVisible] = useState(true);
 
-  const togglePanel = (panel: 'tennis' | 'music' | 'chess') => {
+  const togglePanel = (panel: 'music' | 'chess') => {
     setRightPanel(current => current === panel ? 'none' : panel);
   };
 
-  const handleQuoteClick = () => {
-    if (showQuote) {
-      // Cycle to next quote
-      setQuoteVisible(false);
-      setTimeout(() => {
-        setCurrentQuoteIndex((prev) => (prev + 1) % quotes.length);
-        setQuoteVisible(true);
-      }, 200);
-    } else {
-      setShowQuote(true);
-    }
-  };
-
-  // Auto-cycle quotes when visible
+  // Auto-cycle quotes
   useEffect(() => {
-    if (!showQuote) return;
-    
     const interval = setInterval(() => {
       setQuoteVisible(false);
       setTimeout(() => {
@@ -44,7 +28,7 @@ const About = () => {
     }, 8000);
 
     return () => clearInterval(interval);
-  }, [showQuote]);
+  }, []);
 
   const quote = quotes[currentQuoteIndex];
 
@@ -60,8 +44,8 @@ const About = () => {
           {/* Left side - About content */}
           <div className="about-content flex-1">
             <p className="about-text">
-              Recently completed JP Morgan's Software Engineering program and built Midas Core.
-              When I'm not coding, you'll find me playing{' '}
+              Currently studying for my Salesforce Admin certification while working on <a href="https://oss-slu.github.io/projects/health_app/about" target="_blank" rel="noopener noreferrer" className="text-[--color-accent] hover:underline">TheHealthApp</a>, a health platform with ML-powered assessments.
+              When I'm not coding, I enjoy playing{' '}
               <button
                 onClick={() => togglePanel('chess')}
                 className="chess-link"
@@ -69,54 +53,32 @@ const About = () => {
               >
                 chess
               </button>
-              {' '}or on the{' '}
+              {' '}and{' '}
               <button
-                onClick={() => togglePanel('tennis')}
-                className="tennis-link"
-                title="🎾 Click to play!"
+                onClick={() => togglePanel('music')}
+                className="spotify-link"
+                title="🎵 See what I'm listening to"
               >
-                tennis court
+                listening to music
               </button>
               .
             </p>
             
             <div className="interactive-cards">
-              <button
-                onClick={() => togglePanel('music')}
-                className={`interactive-card music-card ${rightPanel === 'music' ? 'active' : ''}`}
-              >
-                <span className="interactive-card-icon">🎧</span>
-                <span className="interactive-card-content">
-                  <span className="interactive-card-label">Now Playing</span>
-                  <span className="interactive-card-cta">See what I'm listening to →</span>
-                </span>
-              </button>
-              
-              <button
-                onClick={handleQuoteClick}
-                className={`interactive-card quotes-card ${showQuote ? 'active' : ''}`}
-              >
-                <span className="interactive-card-icon">💭</span>
-                <span className="interactive-card-content">
-                  <span className="interactive-card-label">Words I Live By</span>
-                  <span className="interactive-card-cta">{showQuote ? 'Click for another →' : 'Discover my favorite quotes →'}</span>
-                </span>
-              </button>
+              <LocationCard />
             </div>
 
-            {/* Quote reveal */}
-            {showQuote && (
-              <div 
-                className="quote-easter-egg-reveal"
-                style={{
-                  opacity: quoteVisible ? 1 : 0,
-                  transition: 'opacity 0.2s ease',
-                }}
-              >
-                <p className="quote-ee-text">"{quote.text}"</p>
-                <p className="quote-ee-author">— {quote.author}</p>
-              </div>
-            )}
+            {/* Quote display */}
+            <div 
+              className="quote-easter-egg-reveal"
+              style={{
+                opacity: quoteVisible ? 1 : 0,
+                transition: 'opacity 0.2s ease',
+              }}
+            >
+              <p className="quote-ee-text">"{quote.text}"</p>
+              <p className="quote-ee-author">— {quote.author}</p>
+            </div>
           </div>
           
           {/* Right side - Interactive panels */}
@@ -128,18 +90,6 @@ const About = () => {
                 animation: 'fadeSlideIn 0.3s ease-out',
               }}
             >
-              {rightPanel === 'tennis' && (
-                <div className="relative overflow-visible pt-10 pr-10">
-                  <button
-                    onClick={() => setRightPanel('none')}
-                    className="close-btn close-btn-green"
-                    aria-label="Close panel"
-                  >
-                    <span className="close-btn-icon">✕</span>
-                  </button>
-                  <TennisGame />
-                </div>
-              )}
               {rightPanel === 'chess' && (
                 <div className="relative overflow-visible pt-10 pr-10">
                   <button

@@ -35,6 +35,7 @@ const Header = () => {
                     <span className="education-tooltip-meta">St. Louis, MO</span>
                   </span>
                   <span className="education-tooltip-degree">B.S. Computer Science · May 2026</span>
+                  <span className="education-tooltip-courses-label">Related Coursework</span>
                   <span className="education-tooltip-courses">
                     {courses.map((course) => (
                       <span key={course} className="education-tooltip-tag">{course}</span>
@@ -43,7 +44,7 @@ const Header = () => {
                 </span>
               )}
             </span>
-            . open to full-time roles in the US.
+            . open to full-time roles in the US &amp; Canada.
           </p>
           
           {/* Social Links */}
