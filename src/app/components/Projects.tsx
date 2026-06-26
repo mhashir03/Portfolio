@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import ProjectCaseStudy from './ProjectCaseStudy';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const projects = [
   {
@@ -389,6 +390,7 @@ const ProjectCard = ({
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const sectionRef = useScrollReveal<HTMLElement>();
 
   const handleProjectClick = (project: typeof projects[0]) => {
     setSelectedProject(project);
@@ -400,9 +402,9 @@ const Projects = () => {
 
   return (
     <>
-      <section id="projects" className="section">
+      <section id="projects" className="section" ref={sectionRef}>
         <div className="container">
-          <div className="section-header">
+          <div className="section-header scroll-reveal" data-delay="0">
             <p className="section-title">Projects</p>
             <h2>Things I've Built</h2>
           </div>
@@ -410,12 +412,13 @@ const Projects = () => {
           {/* Featured Projects */}
           <div className="projects-grid">
             {featuredProjects.map((project, index) => (
-              <ProjectCard 
-                key={project.title} 
-                project={project} 
-                index={index}
-                onClick={() => handleProjectClick(project)}
-              />
+              <div key={project.title} className="scroll-reveal" data-delay={index + 1}>
+                <ProjectCard 
+                  project={project} 
+                  index={index}
+                  onClick={() => handleProjectClick(project)}
+                />
+              </div>
             ))}
           </div>
           

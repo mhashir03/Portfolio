@@ -1,17 +1,22 @@
+'use client';
+
 import React from 'react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const Skills = () => {
+  const sectionRef = useScrollReveal<HTMLElement>();
+
   return (
-    <section id="skills" className="section">
+    <section id="skills" className="section" ref={sectionRef}>
       <div className="container">
-        <div className="section-header">
+        <div className="section-header scroll-reveal" data-delay="0">
           <p className="section-title">Skills</p>
           <h2>Technologies I Use</h2>
         </div>
         
         <div className="bento-main">
           {/* Box 1 - Languages (Hero) */}
-          <div className="bento-box box-1">
+          <div className="bento-box box-1 scroll-reveal" data-delay="1">
             <span className="bento-eyebrow">Core Stack</span>
             <h3 className="bento-heading">Languages</h3>
             <div className="bento-chips">
@@ -25,13 +30,13 @@ const Skills = () => {
           </div>
 
           {/* Box 2 - Years stat */}
-          <div className="bento-box box-2">
+          <div className="bento-box box-2 scroll-reveal scroll-reveal-scale" data-delay="2">
             <span className="bento-stat-large">3+</span>
             <span className="bento-stat-label">Years<br/>Coding</span>
           </div>
 
           {/* Box 3 - Frameworks */}
-          <div className="bento-box box-3">
+          <div className="bento-box box-3 scroll-reveal" data-delay="3">
             <span className="bento-eyebrow-dark">Building Interfaces</span>
             <h3 className="bento-heading-dark">Frameworks</h3>
             <div className="bento-chips bento-chips-dark">
@@ -45,7 +50,7 @@ const Skills = () => {
           </div>
 
           {/* Box 4 - Data & ML */}
-          <div className="bento-box box-4">
+          <div className="bento-box box-4 scroll-reveal" data-delay="4">
             <span className="bento-eyebrow">Intelligence Layer</span>
             <h3 className="bento-heading">Data & ML</h3>
             <div className="bento-chips">
@@ -59,13 +64,13 @@ const Skills = () => {
           </div>
 
           {/* Box 5 - Tools stat */}
-          <div className="bento-box box-5">
+          <div className="bento-box box-5 scroll-reveal scroll-reveal-scale" data-delay="5">
             <span className="bento-stat-large">20+</span>
             <span className="bento-stat-label">Tools<br/></span>
           </div>
 
           {/* Box 6 - DevOps */}
-          <div className="bento-box box-6">
+          <div className="bento-box box-6 scroll-reveal" data-delay="5">
             <span className="bento-eyebrow">Infrastructure</span>
             <h3 className="bento-heading">DevOps & Cloud</h3>
             <div className="bento-chips">

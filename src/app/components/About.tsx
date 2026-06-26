@@ -5,6 +5,7 @@ import MiniChess from './MiniChess';
 import SpotifyNowPlaying from './Spotify';
 import LocationCard from './LocationCard';
 import { quotes } from '../quotes';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 type RightPanel = 'none' | 'music' | 'chess';
 
@@ -12,6 +13,7 @@ const About = () => {
   const [rightPanel, setRightPanel] = useState<RightPanel>('none');
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
   const [quoteVisible, setQuoteVisible] = useState(true);
+  const sectionRef = useScrollReveal<HTMLElement>();
 
   const togglePanel = (panel: 'music' | 'chess') => {
     setRightPanel(current => current === panel ? 'none' : panel);
@@ -33,9 +35,9 @@ const About = () => {
   const quote = quotes[currentQuoteIndex];
 
   return (
-    <section id="about" className="section">
+    <section id="about" className="section" ref={sectionRef}>
       <div className="container">
-        <div className="section-header">
+        <div className="section-header scroll-reveal" data-delay="0">
           <p className="section-title">About</p>
           <h2>A Bit About Me</h2>
         </div>
@@ -43,7 +45,7 @@ const About = () => {
         <div className="flex flex-col lg:flex-row lg:items-start lg:gap-12">
           {/* Left side - About content */}
           <div className="about-content flex-1">
-            <p className="about-text">
+            <p className="about-text scroll-reveal" data-delay="1">
               Currently studying for my Salesforce Admin certification while working on <a href="https://oss-slu.github.io/projects/health_app/about" target="_blank" rel="noopener noreferrer" className="text-[--color-accent] hover:underline">TheHealthApp</a>, a health platform with ML-powered assessments.
               When I'm not coding, I enjoy playing{' '}
               <button
@@ -64,13 +66,14 @@ const About = () => {
               .
             </p>
             
-            <div className="interactive-cards">
+            <div className="interactive-cards scroll-reveal" data-delay="2">
               <LocationCard />
             </div>
 
             {/* Quote display */}
             <div 
-              className="quote-easter-egg-reveal"
+              className="quote-easter-egg-reveal scroll-reveal"
+              data-delay="3"
               style={{
                 opacity: quoteVisible ? 1 : 0,
                 transition: 'opacity 0.2s ease',

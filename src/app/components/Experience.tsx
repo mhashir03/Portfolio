@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const experiences = [
   {
@@ -46,17 +49,23 @@ const experiences = [
 ];
 
 const Experience = () => {
+  const sectionRef = useScrollReveal<HTMLElement>();
+
   return (
-    <section id="experience" className="section">
+    <section id="experience" className="section" ref={sectionRef}>
       <div className="container">
-        <div className="section-header">
+        <div className="section-header scroll-reveal" data-delay="0">
           <p className="section-title">Experience</p>
           <h2>Where I've Worked</h2>
         </div>
         
         <div className="timeline">
-          {experiences.map((exp) => (
-            <article key={exp.company} className="timeline-item">
+          {experiences.map((exp, index) => (
+            <article 
+              key={exp.company} 
+              className="timeline-item scroll-reveal"
+              data-delay={Math.min(index + 1, 5)}
+            >
               <div className="timeline-date">{exp.timeframe}</div>
               
               <div className="timeline-content">
