@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 /* ── Data ─────────────────────────────────────────────────── */
 const PROJECTS = [
   {
-    n: '01', title: 'OZZY', org: 'HACKSLU 2025', badge: '★ WINNER', year: '2025', featured: true,
+    n: '01', title: 'OZZY', org: 'HACKSLU 2025', badge: 'WINNER', year: '2025', featured: true,
     overview: 'Mobile app helping users with speech difficulties communicate effectively. Sends voice through OpenAI Whisper API for clarification then plays it back via TTS. Built in 24 hours for the Assistive Technology track.',
     features: [
       'OpenAI Whisper API handles unclear speech far better than standard STT',
@@ -21,10 +21,10 @@ const PROJECTS = [
       { l: 'Audio',     t: 'Expo AV & Expo Speech' },
     ],
     github: 'https://github.com/mhashir03/Ozzy',
-    live:   'https://www.useozzy.com/',
+    live:   'https://ozzy-website-git-main-mhashir03s-projects.vercel.app/',
   },
   {
-    n: '02', title: 'KIRA', org: 'DEVFEST WASHU 2025', badge: '★ WINNER', year: '2025', featured: true,
+    n: '02', title: 'KIRA', org: 'DEVFEST WASHU 2025', badge: 'FEATURED', year: '2025', featured: true,
     overview: 'Voice-first medical triage app powered by Google Gemini AI. Captures symptoms via speech, returns structured analysis with conditions, recommended specialists, and required disclaimers.',
     features: [
       'Speech-to-text captures symptoms naturally — no typing required',
@@ -40,7 +40,7 @@ const PROJECTS = [
       { l: 'Voice',     t: 'Web Speech API' },
     ],
     github: 'https://github.com/mhashir03/Kira',
-    live:   'https://www.usekiraapp.com/',
+    live:   'https://kira-f8ypdssba-mhashir03s-projects.vercel.app/',
   },
   {
     n: '03', title: 'OPEN POLITIC', org: 'PERSONAL', badge: null, year: '2025', featured: true,
