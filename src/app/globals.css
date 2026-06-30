@@ -2256,3 +2256,255 @@ a:hover {
   background-color: var(--color-border-subtle);
   margin: var(--space-3xl) 0;
 }
+
+/* ============================================================
+   BRUTALIST REDESIGN — add these to the bottom of globals.css
+   ============================================================ */
+
+/* Google Fonts — add this link to layout.tsx <head> OR use next/font/google */
+/* @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap'); */
+
+:root {
+  --font-archivo: 'Archivo', system-ui, sans-serif;
+  --font-mono-sp: 'Space Mono', ui-monospace, monospace;
+
+  /* Brutalist palette — dark */
+  --br-bg:        #0B0B0C;
+  --br-bg2:       #141417;
+  --br-panel:     #0F0F12;
+  --br-ink:       #ECEAE3;
+  --br-ink2:      #9D9B92;
+  --br-ink3:      #65655F;
+  --br-line:      #26262A;
+  --br-line2:     #1E1E22;
+  --br-accent:    #FA3B14;
+  --br-on-accent: #fff;
+}
+
+/* Light mode override — put on <html data-br-theme="light"> */
+[data-br-theme="light"] {
+  --br-bg:        #EFEBE1;
+  --br-bg2:       #E4DFD2;
+  --br-panel:     #F6F3EA;
+  --br-ink:       #13120F;
+  --br-ink2:      #56544D;
+  --br-ink3:      #8C897E;
+  --br-line:      #CCC6B6;
+  --br-line2:     #DCD7C9;
+  --br-accent:    #E1330A;
+  --br-on-accent: #fff;
+}
+
+/* Brutalist theme — override legacy design-system typography */
+[data-br-theme] body {
+  background-color: var(--br-bg);
+  color: var(--br-ink);
+}
+
+[data-br-theme] h1,
+[data-br-theme] h2,
+[data-br-theme] h3,
+[data-br-theme] h4,
+[data-br-theme] h5,
+[data-br-theme] h6,
+[data-br-theme] p,
+[data-br-theme] a {
+  color: inherit;
+}
+
+[data-br-theme] a:hover {
+  color: var(--br-accent);
+}
+
+/* Keyframes used across brutalist components */
+@keyframes brMarquee   { from { transform: translateX(0) }   to { transform: translateX(-50%) } }
+@keyframes brBlink     { 0%,100% { opacity: 1 }              50% { opacity: 0 } }
+@keyframes brRise      { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: translateY(0) } }
+@keyframes brPulse     { 0%,100% { opacity: 1; transform: scale(1) }     50% { opacity: .25; transform: scale(.55) } }
+@keyframes brWave      { 0%,100% { height: 3px }              50% { height: 20px } }
+
+/* ── Brutalist interactive hovers ─────────────────────────── */
+
+.br-interactive {
+  transition:
+    color var(--transition-fast),
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+/* Nav */
+.br-nav-logo:hover {
+  opacity: 0.75;
+}
+
+.br-nav-logo:hover .br-nav-logo-dot {
+  transform: scale(1.15);
+}
+
+.br-nav-logo-dot {
+  transition: transform var(--transition-fast);
+}
+
+.br-nav-link {
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.br-nav-link:hover {
+  color: var(--br-ink) !important;
+}
+
+.br-theme-btn {
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.br-theme-btn:not(.br-theme-btn--active):hover {
+  background: var(--br-bg2) !important;
+  color: var(--br-ink) !important;
+}
+
+/* Hero CTAs */
+.br-btn-accent {
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.br-btn-accent:hover {
+  background: transparent !important;
+  color: var(--br-accent) !important;
+}
+
+.br-btn-outline {
+  transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+}
+
+.br-btn-outline:hover {
+  border-color: var(--br-ink) !important;
+  color: var(--br-ink) !important;
+  background: var(--br-panel) !important;
+}
+
+/* Bordered link chips */
+.br-link-chip {
+  transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+}
+
+.br-link-chip:hover {
+  border-color: var(--br-ink) !important;
+  color: var(--br-ink) !important;
+}
+
+.br-link-chip--accent:hover {
+  filter: brightness(1.12);
+}
+
+/* Click-to-copy email */
+.br-copy-box {
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.br-copy-box:hover {
+  border-color: var(--br-accent) !important;
+  background: var(--br-panel) !important;
+}
+
+/* Footer / text links */
+.br-text-link {
+  transition: color var(--transition-fast);
+}
+
+.br-text-link:hover {
+  color: var(--br-accent) !important;
+}
+
+/* Spotify widget */
+.br-spotify-profile:hover {
+  color: var(--br-ink) !important;
+}
+
+.br-spotify-now:hover .br-spotify-now-title {
+  color: var(--br-accent) !important;
+}
+
+.br-spotify-track {
+  transition: background var(--transition-fast);
+  border-radius: 0;
+}
+
+.br-spotify-track:hover {
+  background: var(--br-bg2);
+}
+
+.br-spotify-track:hover .br-spotify-track-title {
+  color: var(--br-accent) !important;
+}
+
+/* Project rows — subtle peek on hover */
+.br-project {
+  transition: background var(--transition-fast);
+}
+
+.br-project:not(.br-project--open):hover {
+  background: var(--br-panel);
+}
+
+.br-project:not(.br-project--open):hover .br-project-row {
+  border-left-color: var(--br-accent) !important;
+}
+
+.br-project:not(.br-project--open):hover .br-project-ghost {
+  opacity: 0.06 !important;
+}
+
+.br-project-row {
+  transition: border-color var(--transition-fast);
+}
+
+.br-project-arrow {
+  display: inline-block;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.br-project:not(.br-project--open):hover .br-project-arrow {
+  color: var(--br-accent) !important;
+  transform: translateY(2px);
+}
+
+.br-project-peek {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 20px 0 57px;
+  transition:
+    max-height var(--transition-base),
+    opacity var(--transition-base),
+    padding var(--transition-base);
+}
+
+.br-project:not(.br-project--open):hover .br-project-peek {
+  max-height: 48px;
+  opacity: 1;
+  padding-bottom: 14px;
+}
+
+.br-project-peek-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--br-ink3);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Expand / collapse project list */
+.br-expand-btn {
+  transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+}
+
+.br-expand-btn:hover {
+  border-color: var(--br-ink) !important;
+  color: var(--br-ink) !important;
+  background: var(--br-panel) !important;
+}
