@@ -47,7 +47,7 @@ export default function OffHours() {
         </div>
 
         <h2 style={{ fontWeight: 900, fontSize: 'clamp(36px,6vw,72px)', lineHeight: .9, letterSpacing: '-.04em', margin: '0 0 36px', textTransform: 'uppercase' }}>
-          About<br />me.
+          When I'm<br />not coding.
         </h2>
 
         <div style={{ display: 'grid', gridTemplateColumns: wide ? '1fr 1.3fr' : '1fr', gap: 44, alignItems: 'start' }}>
