@@ -73,22 +73,23 @@ export async function GET() {
     const song = await response.json();
     console.log('Song data received:', song.is_playing ? `${song.item?.name} by ${song.item?.artists[0]?.name}` : 'Not playing');
     
-    if (!song.is_playing) {
+    if (!song.item) {
       return NextResponse.json({ isPlaying: false });
     }
 
     const albumImageUrl = song.item.album.images[0]?.url;
     const artist = song.item.artists.map((_artist) => _artist.name).join(', ');
-    const isPlaying = song.is_playing;
     const songUrl = song.item.external_urls.spotify;
     const title = song.item.name;
 
     return NextResponse.json({
       albumImageUrl,
       artist,
-      isPlaying,
+      isPlaying: song.is_playing,
       songUrl,
       title,
+      progressMs: song.progress_ms ?? 0,
+      durationMs: song.item.duration_ms ?? 0,
     });
   } catch (error) {
     console.error('Error fetching Spotify data:', error);

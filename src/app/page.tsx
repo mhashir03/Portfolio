@@ -1,19 +1,23 @@
-import Header from './components/Header';
-import About from './components/About';
-import Projects from './components/Projects';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Footer from './components/Footer';
+import NavBrutalist     from './components/NavBrutalist';
+import HeroBrutalist    from './components/HeroBrutalist';
+import WorkBrutalist    from './components/WorkBrutalist';
+import TrackRecord      from './components/TrackRecord';
+import OffHours         from './components/OffHours';
+import StackBrutalist   from './components/StackBrutalist';
+import ContactBrutalist from './components/ContactBrutalist';
+import FooterBrutalist  from './components/FooterBrutalist';
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Footer />
+      <NavBrutalist />
+      <HeroBrutalist />
+      <WorkBrutalist />
+      <TrackRecord />
+      <OffHours />
+      <StackBrutalist />
+      <ContactBrutalist />
+      <FooterBrutalist />
     </>
   );
 }

@@ -38,7 +38,7 @@ const getAccessToken = async () => {
 };
 
 const getTopTracks = async (accessToken) => {
-  return fetch(`${TOP_TRACKS_ENDPOINT}?limit=3&time_range=short_term`, {
+  return fetch(`${TOP_TRACKS_ENDPOINT}?limit=5&time_range=short_term`, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
