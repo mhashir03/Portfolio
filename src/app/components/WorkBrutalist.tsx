@@ -156,11 +156,11 @@ export default function WorkBrutalist() {
         {/* Section label */}
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, marginBottom: 10 }}>
           <span style={{ fontFamily: 'var(--font-mono-sp)', fontSize: 13, color: 'var(--br-accent)' }}>01</span>
-          <span style={{ fontFamily: 'var(--font-mono-sp)', fontSize: 11, color: 'var(--br-ink3)', letterSpacing: '.12em' }}>SELECTED PROJECTS</span>
+          <span style={{ fontFamily: 'var(--font-mono-sp)', fontSize: 11, color: 'var(--br-ink3)', letterSpacing: '.12em' }}>PROJECTS</span>
         </div>
 
         <h2 style={{ fontWeight: 900, fontSize: 'clamp(36px,6vw,72px)', lineHeight: .9, letterSpacing: '-.04em', margin: '0 0 36px', textTransform: 'uppercase' }}>
-          What I&rsquo;ve<br />shipped.
+          What I&rsquo;ve<br />Built.
         </h2>
 
         {/* Table header */}

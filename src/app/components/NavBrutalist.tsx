@@ -10,7 +10,6 @@ const NAV_LINKS = [
 ];
 
 export default function NavBrutalist() {
-  const [progress, setProgress]     = useState(0);
   const [active,   setActive]       = useState('hero');
   const [theme,    setTheme]        = useState<'dark'|'light'>('dark');
   const [narrow,   setNarrow]       = useState(false);
@@ -22,8 +21,6 @@ export default function NavBrutalist() {
     else if (window.matchMedia('(prefers-color-scheme: light)').matches) applyTheme('light');
 
     const onScroll = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(max > 0 ? window.scrollY / max : 0);
       const ids = ['hero', 'projects', 'track', 'about', 'stack', 'contact'];
       let cur = 'hero';
       ids.forEach(id => {
@@ -53,22 +50,11 @@ export default function NavBrutalist() {
   function goTo(id: string) {
     const el = document.getElementById(id);
     if (!el) return;
-    const top = el.getBoundingClientRect().top + (window.scrollY || window.pageYOffset) - 60;
-    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   return (
     <>
-      {/* Progress bar */}
-      <div
-        style={{
-          position: 'fixed', top: 0, left: 0, height: 3,
-          background: 'var(--br-accent)', zIndex: 300,
-          width: `${(progress * 100).toFixed(2)}%`,
-          transition: 'width .12s linear', pointerEvents: 'none',
-        }}
-      />
-
       <header style={{
         position: 'sticky', top: 0, zIndex: 200,
         background: 'var(--br-bg)', borderBottom: '1px solid var(--br-line)',

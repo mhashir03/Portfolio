@@ -2295,6 +2295,11 @@ a:hover {
   --br-on-accent: #fff;
 }
 
+/* Anchor scroll offset — accounts for the 58px sticky navbar */
+section[id] {
+  scroll-margin-top: 58px;
+}
+
 /* Brutalist theme — override legacy design-system typography */
 [data-br-theme] body {
   background-color: var(--br-bg);

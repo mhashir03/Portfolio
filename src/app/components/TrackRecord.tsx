@@ -3,11 +3,11 @@
 import React, { useEffect, useState } from 'react';
 
 const EXPERIENCES = [
-  { timeframe: "SPRING '26", org: 'TheHealthApp',       role: 'Software Engineer',               impact: 'Building a health platform with ML-powered assessments to help patients understand their health.' },
-  { timeframe: "FALL '25",   org: "Where's Religion?",  role: 'Software Engineer',               impact: 'Cross-platform features in React Native + TypeScript deployed on AWS infrastructure.' },
-  { timeframe: "FALL '25",   org: 'Saint Louis Univ.',  role: 'TA — Operating Systems',          impact: 'Office hours and grading for an OS course taught in C.' },
-  { timeframe: "SUMMER '25", org: 'Headstarter',        role: 'SWE Fellow',                      impact: 'Built ML pipelines using Computer Vision + OCR for Mandolin and Automax AI over an intensive 8-week program.' },
-  { timeframe: "SUMMER '23", org: 'GEEZ Creationz',     role: 'SWE Intern',                      impact: 'Launched the company website with React, directly driving new client acquisition.' },
+  { timeframe: "SPRING '26", org: 'TheHealthApp',       role: 'Open Source Software Developer',               impact: 'Building a health platform with ML-powered assessments to help patients understand their health.' },
+  { timeframe: "FALL '25",   org: "Where's Religion?",  role: 'Open Source Software Developer',               impact: 'Cross-platform features in React Native + TypeScript deployed on AWS infrastructure.' },
+  { timeframe: "FALL '25",   org: 'Saint Louis University',  role: 'Teaching Assistant',          impact: 'Office hours and grading for an Operating Systems course taught in C.' },
+  { timeframe: "SUMMER '25", org: 'Headstarter',        role: 'Software Engineer Fellow',                      impact: 'Built ML pipelines using Computer Vision + OCR for Mandolin and Automax AI over an intensive 8-week program.' },
+  { timeframe: "SUMMER '23", org: 'GEEZ Creationz',     role: 'Software Engineer Intern',                      impact: 'Launched the company website with React, directly driving new client acquisition.' },
 ];
 
 export default function TrackRecord() {
@@ -26,11 +26,11 @@ export default function TrackRecord() {
 
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, marginBottom: 10 }}>
           <span style={{ fontFamily: 'var(--font-mono-sp)', fontSize: 13, color: 'var(--br-accent)' }}>02</span>
-          <span style={{ fontFamily: 'var(--font-mono-sp)', fontSize: 11, color: 'var(--br-ink3)', letterSpacing: '.12em' }}>TRACK RECORD</span>
+          <span style={{ fontFamily: 'var(--font-mono-sp)', fontSize: 11, color: 'var(--br-ink3)', letterSpacing: '.12em' }}>EXPERIENCE</span>
         </div>
 
         <h2 style={{ fontWeight: 900, fontSize: 'clamp(36px,6vw,72px)', lineHeight: .9, letterSpacing: '-.04em', margin: '0 0 36px', textTransform: 'uppercase' }}>
-          Where I&rsquo;ve<br />been.
+          Where I&rsquo;ve<br />worked.
         </h2>
 
         {/* Desktop: table header */}

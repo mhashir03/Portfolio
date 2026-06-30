@@ -55,7 +55,7 @@ export default function OffHours() {
           {/* Left: bio + quote */}
           <div>
             <p style={{ fontSize: 16, lineHeight: 1.68, color: 'var(--br-ink2)', margin: '0 0 30px' }}>
-              Currently building TheHealthApp — an ML-powered health assessment platform. Also deep in Salesforce Admin cert prep. Off the clock: music and long walks around St. Louis.
+              I'm either playing pickleball or at the gym. I also love to go on walks around new parks and trails whilst listening to music.
             </p>
             <div style={{ borderLeft: '3px solid var(--br-accent)', padding: '14px 20px', opacity: visible ? 1 : 0, transition: 'opacity .22s' }}>
               <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--br-ink)', margin: '0 0 10px', fontStyle: 'italic' }}>

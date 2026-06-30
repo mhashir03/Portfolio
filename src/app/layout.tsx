@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { Archivo, Space_Mono } from "next/font/google";
 import "./globals.css";
+import IntroGate from "./components/IntroGate";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -18,8 +19,8 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Hashir",
-  description: "Software Engineer building impactful products. CS @ Saint Louis University.",
+  title: "HASHIR",
+  description: "swe, portfolio, personal website",
   icons: {
     icon: '/favicon.ico',
   },
@@ -38,7 +39,7 @@ export default function RootLayout({
     >
       <body className={GeistSans.className}>
         <main className="min-h-screen">
-          {children}
+          <IntroGate>{children}</IntroGate>
         </main>
       </body>
     </html>

@@ -7,8 +7,7 @@ export default function HeroBrutalist() {
   function goTo(id: string) {
     const el = document.getElementById(id);
     if (!el) return;
-    const top = el.getBoundingClientRect().top + (window.scrollY || window.pageYOffset) - 60;
-    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   return (
@@ -35,8 +34,8 @@ export default function HeroBrutalist() {
         color: 'var(--br-ink3)', letterSpacing: '.08em',
         flexWrap: 'wrap', gap: 6,
       }}>
-        <span>FULL-STACK SOFTWARE ENGINEER</span>
-        <span>B.S. CS &middot; SAINT LOUIS UNIVERSITY</span>
+        <span>FULL-STACK DEVELOPER</span>
+        <span>COMPUTER SCIENCE @ SAINT LOUIS UNIVERSITY</span>
       </div>
 
       {/* ── Description + CTA — floats bottom-right above the name ── */}
@@ -51,7 +50,7 @@ export default function HeroBrutalist() {
           fontSize: 'clamp(15px, 1.7vw, 21px)', lineHeight: 1.5,
           color: 'var(--br-ink)', margin: '0 0 22px', fontWeight: 500,
         }}>
-          Full-stack dev. New grad. Open to full-time roles.
+          Full-stack dev. New grad. Open to full-time roles in the USA.
         </p>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
@@ -81,7 +80,7 @@ export default function HeroBrutalist() {
               border: '1px solid var(--br-ink3)', textDecoration: 'none',
             }}
           >
-            RESUME &#8599;
+            VIEW RESUME &#8599;
           </a>
         </div>
       </div>
