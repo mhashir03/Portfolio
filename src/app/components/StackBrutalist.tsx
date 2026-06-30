@@ -3,10 +3,13 @@
 import React from 'react';
 
 const STACK = [
-  { label: 'LANGUAGES',  items: 'Python · Java · C/C++ · TypeScript · JavaScript · SQL' },
-  { label: 'FRAMEWORKS', items: 'React · Next.js · React Native · Spring Boot · Tailwind · LangChain' },
-  { label: 'DATA & ML',  items: 'Pandas · NumPy · scikit-learn · PyTorch · OpenCV · spaCy' },
-  { label: 'INFRA',      items: 'Docker · AWS · MongoDB · Apache Kafka · CI/CD · Git' },
+  { label: 'LANGUAGES',  items: 'Python · TypeScript · JavaScript · Java · C/C++ · SQL' },
+  { label: 'FRONTEND',   items: 'React.js · Next.js · React Native · Expo · Tailwind CSS' },
+  { label: 'BACKEND',    items: 'Spring Boot · Spring Data JPA · REST APIs · Apache Kafka' },
+  { label: 'DATABASES',  items: 'SQL · MongoDB' },
+  { label: 'CLOUD',      items: 'Docker · AWS · GitHub Actions · Git' },
+  { label: 'TOOLS',      items: 'Cursor · Claude Code · Trello' },
+  { label: 'DATA & ML',  items: 'Pandas · NumPy · scikit-learn · PyTorch · OpenCV · spaCy · BeautifulSoup · LangChain' },
 ];
 
 export default function StackBrutalist() {

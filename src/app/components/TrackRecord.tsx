@@ -3,11 +3,30 @@
 import React, { useEffect, useState } from 'react';
 
 const EXPERIENCES = [
-  { timeframe: "SPRING '26", org: 'TheHealthApp',       role: 'Open Source Software Developer',               impact: 'Building a health platform with ML-powered assessments to help patients understand their health.' },
-  { timeframe: "FALL '25",   org: "Where's Religion?",  role: 'Open Source Software Developer',               impact: 'Cross-platform features in React Native + TypeScript deployed on AWS infrastructure.' },
-  { timeframe: "FALL '25",   org: 'Saint Louis University',  role: 'Teaching Assistant',          impact: 'Office hours and grading for an Operating Systems course taught in C.' },
-  { timeframe: "SUMMER '25", org: 'Headstarter',        role: 'Software Engineer Fellow',                      impact: 'Built ML pipelines using Computer Vision + OCR for Mandolin and Automax AI over an intensive 8-week program.' },
-  { timeframe: "SUMMER '23", org: 'GEEZ Creationz',     role: 'Software Engineer Intern',                      impact: 'Launched the company website with React, directly driving new client acquisition.' },
+  {
+    timeframe: "SPRING '26",
+    org: 'The Health App',
+    role: 'Software Developer',
+    impact: 'Shipped tested, multilingual health platform features as part of a 3-person Agile team building tools to help patients understand their health.',
+  },
+  {
+    timeframe: "FALL '25",
+    org: 'Saint Louis University',
+    role: 'Teaching Assistant — Operating Systems',
+    impact: 'Supported 28 students through weekly office hours while grading 500+ Operating Systems labs and assignments in C.',
+  },
+  {
+    timeframe: "FALL '25",
+    org: "Where's Religion?",
+    role: 'Software Developer',
+    impact: 'Delivered cross-platform features for 1,000+ users and production infrastructure including CI/CD and a zero-downtime MongoDB migration.',
+  },
+  {
+    timeframe: "SUMMER '25",
+    org: 'Headstarter',
+    role: 'Software Engineer Fellow',
+    impact: 'Built production AI software for healthcare and real estate startups, including OCR/NLP pipelines and recommendation systems serving 1M+ users.',
+  },
 ];
 
 export default function TrackRecord() {

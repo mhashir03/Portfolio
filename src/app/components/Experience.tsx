@@ -5,46 +5,39 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const experiences = [
   {
-    company: "TheHealthApp",
-    role: 'Software Engineer',
-    timeframe: 'Spring 2026',
+    company: 'The Health App',
+    role: 'Software Developer',
+    timeframe: 'Jan 2026 – May 2026',
     location: 'St. Louis, MO',
-    summary: 'Building a health platform with ML-powered assessments for patients.',
-  },
-  {
-    company: "Where's Religion?",
-    role: 'Software Engineer',
-    timeframe: 'Fall 2025',
-    location: 'St. Louis, MO',
-    summary: 'Developed cross-platform features with React Native and TypeScript on AWS.',
+    summary: 'Built React Testing Library and Vitest suite achieving 85%+ authentication test coverage. Developed multilingual health questionnaire with React, Tailwind, and i18next supporting 5 languages.',
   },
   {
     company: 'Saint Louis University',
-    role: 'Teaching Assistant · Operating Systems',
-    timeframe: 'Fall 2025',
+    role: 'Teaching Assistant — Operating Systems',
+    timeframe: 'Aug 2025 – Dec 2025',
     location: 'St. Louis, MO',
-    summary: 'Held office hours and grading assignments in C.',
+    summary: 'Graded 500+ Operating Systems labs and assignments whilst holding weekly office hours for 28 students.',
+  },
+  {
+    company: "Where's Religion?",
+    role: 'Software Developer',
+    timeframe: 'Aug 2025 – Dec 2025',
+    location: 'St. Louis, MO',
+    summary: 'Built cross-platform features serving 1,000+ users. Implemented CI/CD with Docker, AWS, and GitHub Actions. Migrated legacy user data to MongoDB with zero downtime.',
   },
   {
     company: 'Headstarter',
     role: 'Software Engineer Fellow',
-    timeframe: 'Summer 2025',
+    timeframe: 'Jun 2025 – Aug 2025',
     location: 'Remote',
     summaryJsx: (
       <>
-        Built ML pipelines with Computer Vision and OCR for{' '}
+        Built AI software for healthcare and real estate startups supporting 1M+ users. Developed OCR + NLP pipeline for{' '}
         <a href="https://www.mandolin.com/" target="_blank" rel="noopener noreferrer" className="text-[--color-accent] hover:underline">Mandolin</a>
-        {' '}and{' '}
+        {' '}and recommendation engine for{' '}
         <a href="https://www.automax.ai/" target="_blank" rel="noopener noreferrer" className="text-[--color-accent] hover:underline">Automax AI</a>.
       </>
     ),
-  },
-  {
-    company: 'GEEZ Creationz',
-    role: 'Software Engineer Intern',
-    timeframe: 'Summer 2023',
-    location: 'Remote',
-    summary: 'Launched the company website with React to drive client acquisition.',
   },
 ];
 

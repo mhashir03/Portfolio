@@ -5,12 +5,12 @@ import React, { useState } from 'react';
 /* ── Data ─────────────────────────────────────────────────── */
 const PROJECTS = [
   {
-    n: '01', title: 'OZZY', org: 'HACKSLU 2025', badge: 'WINNER', year: '2025', featured: true,
-    overview: 'Mobile app helping users with speech difficulties communicate effectively. Sends voice through OpenAI Whisper API for clarification then plays it back via TTS. Built in 24 hours for the Assistive Technology track.',
+    n: '01', title: 'OZZY', org: 'HACKSLU 2025', badge: 'MOST INNOVATIVE', year: '2025', featured: true,
+    overview: 'React Native app built in 24 hours that helps users with speech difficulties communicate. Designed the complete frontend, brand identity, and logo, with secure Whisper API integration for real-time speech processing.',
     features: [
-      'OpenAI Whisper API handles unclear speech far better than standard STT',
-      'Real-time pipeline: voice capture → clarified text → clean speech output',
-      'Accessibility-first UI with large targets, high contrast, and simple flow',
+      'Designed the complete React Native frontend and created Ozzy\'s brand identity and logo',
+      'Integrated Whisper API with secure API calls for real-time speech processing',
+      'Won Most Innovative Project at HackSLU 2025 among 3-person teams in under 24 hours',
       'Cross-platform iOS + Android via React Native & Expo',
     ],
     tech: ['React Native', 'TypeScript', 'Expo', 'Whisper API'],
@@ -24,13 +24,13 @@ const PROJECTS = [
     live:   'https://ozzy-website-git-main-mhashir03s-projects.vercel.app/',
   },
   {
-    n: '02', title: 'KIRA', org: 'DEVFEST WASHU 2025', badge: 'FEATURED', year: '2025', featured: true,
-    overview: 'Voice-first medical triage app powered by Google Gemini AI. Captures symptoms via speech, returns structured analysis with conditions, recommended specialists, and required disclaimers.',
+    n: '02', title: 'KIRA', org: 'DEVFEST WASHU 2025', badge: 'TOP 10', year: '2025', featured: true,
+    overview: 'AI-powered medical triage web app built with Next.js, React, and Gemini API. Responsive frontend with voice input and real-time AI symptom analysis — pivoted mid-hackathon to earn Top 10 among 40+ teams in under 24 hours.',
     features: [
-      'Speech-to-text captures symptoms naturally — no typing required',
-      'Google Gemini AI analyzes symptoms and ranks possible conditions',
+      'Built AI-powered medical triage application using Next.js, React, and Gemini API',
+      'Developed responsive frontend with voice input and real-time AI symptom analysis workflows',
+      'Pivoted mid-hackathon, earning Top 10 among 40+ teams in under 24 hours',
       'Results include specialist recommendations and clear medical disclaimers',
-      'Real-time processing feedback so users know the AI is working',
     ],
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Gemini AI'],
     stack: [
@@ -43,12 +43,12 @@ const PROJECTS = [
     live:   'https://kira-f8ypdssba-mhashir03s-projects.vercel.app/',
   },
   {
-    n: '03', title: 'OPEN POLITIC', org: 'PERSONAL', badge: null, year: '2025', featured: true,
-    overview: 'Full-stack platform enabling users to search and explore U.S. legislation. Built with a 5-person Agile team — Next.js frontend, Spring Boot APIs, and MongoDB persistence.',
+    n: '03', title: 'OPEN POLITIC', org: 'FALL 2025', badge: null, year: '2025', featured: true,
+    overview: 'Full-stack platform for searching and exploring U.S. legislation. Led Scrum ceremonies for a 5-person team while developing the Next.js/React frontend and integrating Congress.gov REST APIs.',
     features: [
-      'Search and explore U.S. legislation through an intuitive web interface',
-      'REST APIs and backend services developed collaboratively via GitHub pull requests and code reviews',
-      'Containerized with Docker and integrated CI/CD for streamlined deployments',
+      'Led Scrum ceremonies for a 5-person team while developing the Next.js/React frontend using Trello',
+      'Integrated Congress.gov REST APIs powering real-time policy search and filtering',
+      'Containerized application with Docker and collaborated on backend integration and deployment workflows',
     ],
     tech: ['Next.js', 'Spring Boot', 'MongoDB', 'Docker'],
     stack: [

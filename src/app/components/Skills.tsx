@@ -35,17 +35,16 @@ const Skills = () => {
             <span className="bento-stat-label">Years<br/>Coding</span>
           </div>
 
-          {/* Box 3 - Frameworks */}
+          {/* Box 3 - Frontend */}
           <div className="bento-box box-3 scroll-reveal" data-delay="3">
             <span className="bento-eyebrow-dark">Building Interfaces</span>
-            <h3 className="bento-heading-dark">Frameworks</h3>
+            <h3 className="bento-heading-dark">Frontend</h3>
             <div className="bento-chips bento-chips-dark">
               <span>React.js</span>
               <span>Next.js</span>
               <span>React Native</span>
-              <span>Spring Boot</span>
-              <span>Tailwind</span>
-              <span>LangChain</span>
+              <span>Expo</span>
+              <span>Tailwind CSS</span>
             </div>
           </div>
 
@@ -60,6 +59,8 @@ const Skills = () => {
               <span>PyTorch</span>
               <span>OpenCV</span>
               <span>spaCy</span>
+              <span>BeautifulSoup</span>
+              <span>LangChain</span>
             </div>
           </div>
 
@@ -69,17 +70,22 @@ const Skills = () => {
             <span className="bento-stat-label">Tools<br/></span>
           </div>
 
-          {/* Box 6 - DevOps */}
+          {/* Box 6 - Backend & DevOps */}
           <div className="bento-box box-6 scroll-reveal" data-delay="5">
             <span className="bento-eyebrow">Infrastructure</span>
-            <h3 className="bento-heading">DevOps & Cloud</h3>
+            <h3 className="bento-heading">Backend & DevOps</h3>
             <div className="bento-chips">
+              <span>Spring Boot</span>
+              <span>Spring Data JPA</span>
+              <span>REST APIs</span>
+              <span>Apache Kafka</span>
               <span>Docker</span>
               <span>AWS</span>
               <span>MongoDB</span>
-              <span>Kafka</span>
-              <span>CI/CD</span>
+              <span>GitHub Actions</span>
               <span>Git</span>
+              <span>Cursor</span>
+              <span>Claude Code</span>
               <span>Trello</span>
             </div>
           </div>
